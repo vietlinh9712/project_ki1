@@ -7,8 +7,9 @@ body{
     width: 100%;
     height: 100%;
 }
+
 .navbar{
-    background-color: rgba(82,64,120,0.8) !important;
+    background-color: #196bff !important;
 }
 .navbar li a{
     color: white !important;
@@ -16,5 +17,6 @@ body{
     padding: 0;
 }
 .navbar li a:hover{
-    color: black !important;
+    color: #534c4c !important;
 }
+
