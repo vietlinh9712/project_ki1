@@ -8,18 +8,38 @@
   <body>
     <h1 id="a"></h1>
     <p>Welcome to </p>
-        <form class="form-control" method="post">
-          <div class="form-group">
-            <label class="input">input</label>
-            <input type="text" name="cm" class="form-control">
+        <form class="form-group" method="post">
+          <div>
+            <label>input</label>
+            <input type="text" name="cm" class="form-control input">
           </div>
           <div class="output">
-            <input type="text" name="m" class="form-control">
+            <label>output</label>
+            <input type="text" name="m" class="form-control output">
           </div>
         </form>
 
   <script type="text/javascript">
 
+    $('.input').bind('input', function () {
+      let input = $('.input');
+      console.log(input.attr('name'))
+      $.ajax({
+        method: 'post',
+        url: '/',
+        data:{
+          input: input.attr('name')
+        },
+        success: function (result) {
+          console.log(result)
+          if (input.val() === ''){
+            $('.output').val('')
+          }else {
+            $('.output').val( input.val() * result.cm);
+          }
+        }
+      })
+    })
   </script>
   </body>
 </html>
