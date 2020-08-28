@@ -9,7 +9,7 @@ body{
 }
 
 .navbar{
-    background-color: #196bff !important;
+    background-color: #3b619c !important;
 }
 .navbar li a{
     color: white !important;
@@ -19,4 +19,6 @@ body{
 .navbar li a:hover{
     color: #534c4c !important;
 }
-
+a:hover{
+    transition: .3s;
+}
