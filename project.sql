@@ -11,6 +11,7 @@ CREATE TABLE DonVi(
 	KiHieu varchar(20)
 );
 CREATE TABLE SoSanh(
+	MaSoSanh int IDENTITY(1,1) PRIMARY KEY,
 	DonViSoSanh Nvarchar(20),
 	ID int FOREIGN KEY REFERENCES DonVi(ID),
 	DonViChuan Nvarchar(20),
