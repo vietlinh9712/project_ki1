@@ -6,6 +6,12 @@ router.get('/', function(req, res, next) {
   res.render('index');
 });
 
+/*GET lenghth page. */
+router.get('/length', function(req, res, next) {
+  res.render('length');
+});
+
+
 router.post('/',function (req,res,next) {
   console.log(req.body);
   if (req.body.input === 'cm'){
@@ -16,3 +22,4 @@ router.post('/',function (req,res,next) {
 })
 
 module.exports = router;
+
