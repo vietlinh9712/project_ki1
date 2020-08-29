@@ -1,4 +1,4 @@
-CREATE DATABASE Project
+CREATE DATABASE Project_ki1
 
 CREATE TABLE DanhMuc(
 	DanhMucID varchar(20) PRIMARY KEY,
