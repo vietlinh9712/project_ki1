@@ -1,6 +1,6 @@
 .sreach{
     width: 100%;
-    height: 250px;
+    height: 300px;
     background-color: #95cedb;
     background-image: url("../images/background-search/bg-page-section.png");
 }
@@ -12,7 +12,7 @@
     width: 740px;
     max-height: 300px;
     position: absolute;
-    top: 61.5%;
+    top: 76.5%;
     left: 16.5%;
 }
 
