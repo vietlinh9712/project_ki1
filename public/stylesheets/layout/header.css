@@ -9,7 +9,7 @@ body{
 }
 
 .navbar{
-    background-color: #3b619c !important;
+    background-color: #4972b1 !important;
 }
 .navbar li a{
     color: white !important;
@@ -23,4 +23,13 @@ body{
 }
 .nav-item a:hover{
     transition: .3s;
+}
+.title{
+    text-align: center;
+    margin-top: 30px;
+    font-size: 50px;
+}
+.small-title{
+    text-align: center;
+    font-style: italic;
 }
