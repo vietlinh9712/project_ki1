@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%-include('layout/head')%>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/index.css">
+    <title></title>
+</head>
+<body>
+<%-include('layout/header-danhmuc') %>
+<section class="length-convert">
+     <div class="container">
+         <div class="feet-convert col-md-6">
+            <form action="#" method="get">
+                    <p>
+                        <label>Feet</label>
+                        <input id="inputFeet" type="number" placeholder="Feet"
+                               oninput="lengthConverter(this.value)" onchange="lengthConverter(this.value)">
+                    </p>
+                    <p>cm: <span id="outputCentimeters"></span></p>
+                    <p>m: <span id="outputMeters"></span></p>
+                    <p>in: <span id="outputInches"></span></p>
+                    <p>yd: <span id="outputYards"></span></p>
+                    <p>km: <span id="outputKilometers"></span></p>
+                    <p>M: <span id="outputMiles"></span></p>
+            </form>
+        </div>
+     </div>
+</section>
+</body>
+<script type="text/javascript">
+    function lengthConverter(valNum) {
+        document.getElementById("outputCentimeters").innerHTML = valNum / 0.032808;
+        document.getElementById("outputMeters").innerHTML = valNum / 0.0022046;
+        document.getElementById("outputInches").innerHTML = valNum *12;
+        document.getElementById("outputYards").innerHTML = valNum *0.33333;
+        document.getElementById("outputKilometers").innerHTML = valNum / 3280.8;
+        document.getElementById("outputMiles").innerHTML = valNum / 0.00018939;
+    }
+</script>
+</html>
