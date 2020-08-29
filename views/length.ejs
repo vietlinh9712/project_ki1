@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%-include('layout/head')%>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/index.css">
+    <title></title>
+</head>
+<body>
+<%-include('layout/header-danhmuc') %>
+<section class="length-convert">
+     <div class="container">
+         <div class="row">
+             <div class="feet-convert col-md-6">
+                <form action="#" method="get">
+                        <p>
+                            <label>Feet</label>
+                            <input id="inputFeet" type="number" placeholder="Feet"
+                                   oninput="feetConverter(this.value)" onchange="feetConverter(this.value)">
+                        </p>
+                        <p>cm: <span id="foutputCentimeters"></span></p>
+                        <p>m: <span id="foutputMeters"></span></p>
+                        <p>in: <span id="foutputInches"></span></p>
+                        <p>yd: <span id="foutputYards"></span></p>
+                        <p>km: <span id="foutputKilometers"></span></p>
+                        <p>M: <span id="foutputMiles"></span></p>
+                </form>
+            </div>
+
+             <div class="meters-convert col-md-6">
+                 <form action="#" method="get">
+                     <p>
+                         <label>Meters</label>
+                         <input id="inputMeters" type="number" placeholder="Meters"
+                                oninput="metersConverter(this.value)" onchange="metersConverter(this.value)">
+                     </p>
+                     <p>cm: <span id="moutputCentimeters"></span></p>
+                     <p>feet: <span id="moutputFeet"></span></p>
+                     <p>in: <span id="moutputInches"></span></p>
+                     <p>yd: <span id="moutputYards"></span></p>
+                     <p>km: <span id="moutputKilometers"></span></p>
+                     <p>M: <span id="moutputMiles"></span></p>
+                 </form>
+             </div>
+         </div>
+     </div>
+</section>
+</body>
+<script type="text/javascript">
+    function feetConverter(valNum) {
+        document.getElementById("foutputCentimeters").innerHTML = valNum / 0.032808;
+        document.getElementById("foutputMeters").innerHTML = valNum / 0.0022046;
+        document.getElementById("foutputInches").innerHTML = valNum *12;
+        document.getElementById("foutputYards").innerHTML = valNum *0.33333;
+        document.getElementById("foutputKilometers").innerHTML = valNum / 3280.8;
+        document.getElementById("foutputMiles").innerHTML = valNum / 0.00018939;
+    }
+    function metersConverter(valNum){
+        document.getElementById("moutputCentimeters").innerHTML = valNum /0.01;
+        document.getElementById("moutputFeet").innerHTML = valNum * 3.2808;
+        document.getElementById("moutputInches").innerHTML = valNum *39.370;
+        document.getElementById("moutputYards").innerHTML = valNum *1.0936;
+        document.getElementById("moutputKilometers").innerHTML = valNum / 1000;
+        document.getElementById("moutputMiles").innerHTML = valNum * 0.00062137;
+
+    }
+</script>
+</html>

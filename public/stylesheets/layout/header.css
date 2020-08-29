@@ -9,14 +9,27 @@ body{
 }
 
 .navbar{
-    background-color: #196bff !important;
+    background-color: #4972b1 !important;
 }
 .navbar li a{
     color: white !important;
     font-size: 20px;
     padding: 0;
+    font-family: 'Londrina Solid', cursive !important;
+    margin-left: 10px;
 }
 .navbar li a:hover{
     color: #534c4c !important;
 }
-
+.nav-item a:hover{
+    transition: .3s;
+}
+.title{
+    text-align: center;
+    margin-top: 30px;
+    font-size: 50px;
+}
+.small-title{
+    text-align: center;
+    font-style: italic;
+}
