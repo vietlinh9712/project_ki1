@@ -1,67 +1,66 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <%-include('layout/head')%>
-    <link rel="stylesheet" type="text/css" href="./stylesheets/index.css">
-    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
 </head>
 <body>
-<%-include('layout/header-danhmuc') %>
-<section class="length-convert">
-     <div class="container">
-         <div class="row">
-             <div class="feet-convert col-md-6">
-                <form action="#" method="get">
-                        <p>
-                            <label>Feet</label>
-                            <input id="inputFeet" type="number" placeholder="Feet"
-                                   oninput="feetConverter(this.value)" onchange="feetConverter(this.value)">
-                        </p>
-                        <p>cm: <span id="foutputCentimeters"></span></p>
-                        <p>m: <span id="foutputMeters"></span></p>
-                        <p>in: <span id="foutputInches"></span></p>
-                        <p>yd: <span id="foutputYards"></span></p>
-                        <p>km: <span id="foutputKilometers"></span></p>
-                        <p>M: <span id="foutputMiles"></span></p>
-                </form>
-            </div>
 
-             <div class="meters-convert col-md-6">
-                 <form action="#" method="get">
-                     <p>
-                         <label>Meters</label>
-                         <input id="inputMeters" type="number" placeholder="Meters"
-                                oninput="metersConverter(this.value)" onchange="metersConverter(this.value)">
-                     </p>
-                     <p>cm: <span id="moutputCentimeters"></span></p>
-                     <p>feet: <span id="moutputFeet"></span></p>
-                     <p>in: <span id="moutputInches"></span></p>
-                     <p>yd: <span id="moutputYards"></span></p>
-                     <p>km: <span id="moutputKilometers"></span></p>
-                     <p>M: <span id="moutputMiles"></span></p>
-                 </form>
-             </div>
-         </div>
-     </div>
+<h1>Danh sach chuyen doi</h1>
+<ol>
+
+    <% ss.map(function (v) { %>
+        <li><%= v.TenSoSanh %></li>
+    <% }) %>
+</ol>
+
+<section class="length-convert">
+    <div class="container">
+        <div class="row">
+            <form action="#" method="get">
+                <label>km</label>
+                <input id="inputKilometers" type="number" placeholder="Kilometers"
+                       oninput="kmConverter(this.value)" onchange="kmConverter(this.value)">
+
+                <label>met</label>
+                <input id="inputMeters" type="number" placeholder="Meters"
+                       oninput="mConverter(this.value)" onchange="mConverter(this.value)">
+
+                <label>cm</label>
+                <input id="inputCentimeters" type="number" placeholder="Centimeters"
+                       oninput="cmConverter(this.value)" onchange="cmConverter(this.value)">
+            </form>
+        </div>
+    </div>
 </section>
 </body>
 <script type="text/javascript">
-    function feetConverter(valNum) {
-        document.getElementById("foutputCentimeters").innerHTML = valNum / 0.032808;
-        document.getElementById("foutputMeters").innerHTML = valNum / 0.0022046;
-        document.getElementById("foutputInches").innerHTML = valNum *12;
-        document.getElementById("foutputYards").innerHTML = valNum *0.33333;
-        document.getElementById("foutputKilometers").innerHTML = valNum / 3280.8;
-        document.getElementById("foutputMiles").innerHTML = valNum / 0.00018939;
-    }
-    function metersConverter(valNum){
-        document.getElementById("moutputCentimeters").innerHTML = valNum /0.01;
-        document.getElementById("moutputFeet").innerHTML = valNum * 3.2808;
-        document.getElementById("moutputInches").innerHTML = valNum *39.370;
-        document.getElementById("moutputYards").innerHTML = valNum *1.0936;
-        document.getElementById("moutputKilometers").innerHTML = valNum / 1000;
-        document.getElementById("moutputMiles").innerHTML = valNum * 0.00062137;
 
+    var TyLeKmtoMet;
+    var TyLeMettoCm;
+
+    <%   ss.map(function (v) {%>
+    if(<%=v.MaSoSanh%> == 6) {  TyLeKmtoMet = <%=v.TiLe%>;};
+    if(<%=v.MaSoSanh%> == 7) {  TyLeMettoCm = <%=1/v.TiLe%>;};
+    <% }); %>
+
+    function kmConverter(valNum) {
+        var a = TyLeKmtoMet;
+        var KmtoMet = valNum*a;
+        document.getElementById("inputMeters").value = KmtoMet;
+        this.mConverter(KmtoMet);
+    }
+    function mConverter(valNum){
+        document.getElementById("inputCentimeters").value = valNum*TyLeMettoCm;
+        document.getElementById("inputKilometers").value = valNum/TyLeKmtoMet;
+    }
+    function cmConverter(valNum){
+        var CmtoMet = valNum/TyLeMettoCm;
+        document.getElementById("inputMeters").value = CmtoMet;
+        this.mConverter(CmtoMet);
     }
 </script>
 </html>

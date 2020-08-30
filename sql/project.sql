@@ -1,22 +1,19 @@
 CREATE DATABASE Project_ki1
 
 CREATE TABLE DanhMuc(
-	DanhMucID varchar(20) PRIMARY KEY,
+	DanhMucID int IDENTITY(1,1) PRIMARY KEY,
 	TenDanhMuc Nvarchar(255)
 );
 CREATE TABLE DonVi(
-	ID int IDENTITY(1,1) PRIMARY KEY,
-	TenDonVi Nvarchar(255),
-	DanhMucID varchar(20) FOREIGN KEY REFERENCES DanhMuc(DanhMucID),
-	KiHieu varchar(20)
+	DonViID int IDENTITY(1,1) PRIMARY KEY,
+	TenDonVi Nvarchar(25),
+	KiHieu Nvarchar(25),
+	DanhMucID int FOREIGN KEY REFERENCES DanhMuc(DanhMucID)
 );
 CREATE TABLE SoSanh(
-	MaSoSanh int IDENTITY(1,1) PRIMARY KEY,
-	DonViSoSanh Nvarchar(20),
-	ID int FOREIGN KEY REFERENCES DonVi(ID),
-	DonViChuan Nvarchar(20),
-	DanhMucID varchar(20) FOREIGN KEY REFERENCES DanhMuc(DanhMucID),
+	MaSoSanh int IDENTITY(1,1),
+	TenSoSanh Nvarchar(255),
+	DonViQuyDoi int FOREIGN KEY REFERENCES DonVi(DonViID),
+	DonViChuan int FOREIGN KEY REFERENCES DonVi(DonViID),
 	TiLe float
 );
-
-SELECT * FROM SoSanh
