@@ -29,3 +29,4 @@ $('#search').bind('input',async function() {
             })
         }}, 1000);
 })
+

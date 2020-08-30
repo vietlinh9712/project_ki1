@@ -808,6 +808,34 @@ legend {
   box-sizing: border-box;
 }
 
+.sreach{
+  width: 100%;
+  height: 300px;
+  background-color: #95cedb;
+}
+.set-search-input{
+  position: relative;
+}
+
+.dropdown{
+  width: 740px;
+  max-height: 300px;
+  position: absolute;
+  top: 76.5%;
+  left: 16.5%;
+}
+
+.dropdown-menu{
+  max-height: 300px !important;
+
+  width: 100%;
+  display: none;
+}
+
+.dropdown-item{
+  height: 50px;
+}
+
 .s010 {
   -ms-flex-pack: center;
   -ms-flex-align: center;
