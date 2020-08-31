@@ -15,7 +15,7 @@ body{
 video{
     object-fit:cover ;
 }
-h1{
+.length-convert h1{
     margin: 0;
     padding: 0;
     position: absolute;
@@ -27,7 +27,7 @@ h1{
     letter-spacing: 0.2em;
     font-size: 40px;
 }
-h1 span{
+.length-convert h1 span{
     opacity: 0;
     display: inline-block;
     animation: animate 1s linear forwards;
@@ -46,16 +46,16 @@ h1 span{
         filter: blur(0);
     }
 }
-h1 span:nth-child(1) {
+.length-convert h1 span:nth-child(1) {
     animation-delay: 1s;
 }
-h1 span:nth-child(2) {
+.length-convert h1 span:nth-child(2) {
     animation-delay: 2.5s;
 }
-h1 span:nth-child(3) {
+.length-convert h1 span:nth-child(3) {
     animation-delay: 3.5s;
 }
-h1 span:nth-child(4) {
+.length-convert h1 span:nth-child(4) {
     animation-delay: 4.5s;
 }
 
