@@ -101,3 +101,11 @@ video{
     opacity: 1;
     right: 0;
 }
+.buttonnext a{
+    text-decoration: none;
+    color: #000000;
+}
+.buttonnext a:hover{
+    text-decoration: none;
+    color: #000000;
+}

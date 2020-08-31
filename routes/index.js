@@ -10,6 +10,10 @@ router.get('/', function(req, res, next) {
 router.get('/length', function(req, res, next) {
   res.render('length');
 });
-
+/*GET length-convert page */
+/*GET lenghth page. */
+router.get('/length-convert', function(req, res, next) {
+  res.render('length-convert');
+});
 module.exports = router;
 
