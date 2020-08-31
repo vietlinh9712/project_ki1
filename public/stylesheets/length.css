@@ -53,9 +53,51 @@ video{
     animation-delay: 2.5s;
 }
 .length-convert h1 span:nth-child(3) {
-    animation-delay: 3.5s;
+    animation-delay: 3s;
 }
 .length-convert h1 span:nth-child(4) {
-    animation-delay: 4.5s;
+    animation-delay: 4s;
+}
+.length-convert h1 span:nth-child(5) {
+    animation-delay: 6s;
 }
 
+.buttonnext {
+    border-radius: 4px;
+    background-color:#FFFFFF ;
+    border: none;
+    color: #000000;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    margin-top: 40px;
+}
+
+.buttonnext span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.buttonnext span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.buttonnext:hover span {
+    padding-right: 25px;
+}
+
+.buttonnext:hover span:after {
+    opacity: 1;
+    right: 0;
+}
