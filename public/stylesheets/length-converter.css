@@ -1,5 +1,6 @@
 body{
-    height: 2000px;
+    background-image: url("../images/unnamed.jpg");
+    background-size: cover;
 }
 *{
     margin: 0;
@@ -15,6 +16,7 @@ img{
     font-weight: 500;
 }
 .intro{
+    margin-top: 40px;
     text-align: center;
     font-family: 'Ubuntu Condensed', sans-serif;
     font-size: 30px;
@@ -58,17 +60,6 @@ img{
     height: 40px;
     text-align: center;
 }
-.selectunit{
-    width: 100%;
-    height: 100%;
-    border: solid black;
-    border-radius: 10px;
-}
-.selectunit form{
-    padding-left: 10%;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
 .result{
     padding: 0.5rem 1rem;
     margin-top: 10px;
@@ -79,11 +70,28 @@ img{
     display: none;
     margin-bottom: 20px;
 }
-.rate{
-    padding-left: 10%;
-    margin-bottom: 10px;
-}
-.table{
-    display: none;
-}
 
+.label{
+    margin:10px 0;
+    font-size: 20px;
+}
+.convert input{
+    width: 100%;
+    height: 32px;
+    text-align: center;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+.input-unit{
+    border: none;
+    border-radius: 5px;
+    margin: 40px 0;
+    background-color: whitesmoke !important;
+    background-size: cover;
+}
+.input-unit a:hover{
+    text-decoration: none;
+}
+.introduce{
+    background-color: #e5f3f7;
+}
