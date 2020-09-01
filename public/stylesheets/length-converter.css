@@ -1,1 +1,89 @@
-.length
+body{
+    height: 2000px;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img{
+    max-width: 100%;
+}
+.length h1{
+    text-align: center;
+    font-family: 'Fredoka One', cursive;
+    font-weight: 500;
+}
+.intro{
+    text-align: center;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    font-size: 30px;
+}
+.listunit li{
+    font-family: 'Satisfy', cursive;
+    font-size: 30px;
+    font-weight: 500;
+}
+.ruler{
+    background-color: #333;
+}
+.container-convert{
+    margin-top: 50px;
+    color: whitesmoke;
+    line-height: 100px;
+    background-color: #333;
+    text-align: center;
+}
+.ruler img{
+    width: 100%;
+}
+.donviquydoi select{
+    width: 100%;
+    height: 40px;
+}
+
+.arrow i{
+    font-size: 40px;
+}
+.btnconvert{
+    outline: none;
+    padding: 5px 40px;
+    color: whitesmoke;
+    background-color: #4972b1;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 20px;
+}
+.inputamount input{
+    height: 40px;
+    text-align: center;
+}
+.selectunit{
+    width: 100%;
+    height: 100%;
+    border: solid black;
+    border-radius: 10px;
+}
+.selectunit form{
+    padding-left: 10%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.result{
+    padding: 0.5rem 1rem;
+    margin-top: 10px;
+    background-color: #d9edf7;
+    padding-left: 10%;
+    line-height: 1.428571429;
+    color: #31708f;
+    display: none;
+    margin-bottom: 20px;
+}
+.rate{
+    padding-left: 10%;
+    margin-bottom: 10px;
+}
+.table{
+    display: none;
+}
+
