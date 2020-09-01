@@ -12,47 +12,6 @@
 <%-include('layout/header')%>
 <section class="length">
     <h1><i class="fas fa-pencil-ruler"></i>  LENGTH - CONVERTER</h1>
-    <div class="intro">
-        <i class="far fa-smile-wink"></i>  On this page, we would like to introduce you to 8 units in the field of Length:
-    </div>
-    <div class="container">
-        <div class="listunit">
-            <ul>
-                <li>inch :</li>
-                The inch (abbreviation: in or ″) is a unit of length in the (British) imperial and United States customary systems of measurement
-                <a href="#">Show more...</a>
-                <li>foot :</li>
-                The foot is a unit for measuring length. It is one of the Imperial units and U.S. customary units. The shortest way of writing the unit "foot" is by the abbreviation "ft" (or "ft."), or by a prime symbol ( ′ )
-                <a href="#">Show more...</a>
-                <li>yard :</li>
-                The yard (abbreviation: yd) is an English unit of length, in both the British imperial and US customary systems of measurement
-                <a href="#">Show more...</a>
-                <li>Mile :</li>
-                The Mile (abbreviation: M) is an English unit of length of linear measure equal to 5,280 feet, or 1,760 yards, and standardised as exactly 1,609.344 metres by international agreement in 1959
-                <a href="#">Show more...</a>
-                <li>millimeter :</li>
-                The millimetre (international spelling; SI unit symbol mm) or millimeter (American spelling) is a unit of length in the metric system
-                <a href="#">Show more...</a>
-                <li>meter :</li>
-                Metre (m), also spelled meter, in measurement, fundamental unit of length in the metric system and in the International Systems of Units (SI)
-                <a href="#">Show more...</a>
-                <li>kilometer :</li>
-                The kilometre (SI symbol: km; /ˈkɪləmiːtər/ or /kɪˈlɒmɪtər/), spelt kilometer in American English, is a unit of length in the metric system
-                <a href="#">Show more...</a>
-                <li>centimeter :</li>
-                The centimetre (cm), also spelled centimeter, unit of length equal to 0.01 metre in the metric system
-                <a href="#">Show more...</a>
-            </ul>
-        </div>
-    </div>
-
-    <div class="container-convert">
-        SELECT AND TYPE A VALUE IN ANY OF THE FIELDS TO CONVERT BETWEEN LENGTH MEASUREMENGTS
-    </div>
-    <div class="ruler">
-        <img src="images/ruler.png">
-    </div>
-
     <div class="container" style="margin-top: 40px;">
         <div class="selectunit">
             <form action="#" method="get">
@@ -99,71 +58,111 @@
                 <a href="##########" onclick="Auto()">LENGTH CONVERSION RATES  <i class="fas fa-plus"></i><i style="display: none !important;" class="fas fa-minus"></i></a>
             </div>
             <div class="row">
-            <div class="col-md-6">
-                <table class="table table-condensed table-striped">
-                    <thead>
-                    <tr>
-                        <th colspan="2">Metric</th>
-                        <th>Imperial</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td colspan="2">1 millimetre [mm]</td>
-                        <td>0.03937 in</td>
-                    </tr>
-                    <tr>
-                        <td>1 centimetre [cm]</td>
-                        <td>10 mm</td>
-                        <td>0.3937 in</td>
-                    </tr>
-                    <tr>
-                        <td>1 metre [m]</td>
-                        <td>100 cm</td>
-                        <td>1.0936 yd</td>
-                    </tr>
-                    <tr>
-                        <td>1 kilometre [km]</td>
-                        <td>1000 m</td>
-                        <td>0.6214 mile</td>
-                    </tr>
-                    </tbody>
-                </table>
+                <div class="col-md-6">
+                    <table class="table table-condensed table-striped">
+                        <thead>
+                        <tr>
+                            <th colspan="2">Metric</th>
+                            <th>Imperial</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td colspan="2">1 millimetre [mm]</td>
+                            <td>0.03937 in</td>
+                        </tr>
+                        <tr>
+                            <td>1 centimetre [cm]</td>
+                            <td>10 mm</td>
+                            <td>0.3937 in</td>
+                        </tr>
+                        <tr>
+                            <td>1 metre [m]</td>
+                            <td>100 cm</td>
+                            <td>1.0936 yd</td>
+                        </tr>
+                        <tr>
+                            <td>1 kilometre [km]</td>
+                            <td>1000 m</td>
+                            <td>0.6214 mile</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-6">
+                    <table class="table table-condensed table-striped">
+                        <thead>
+                        <tr>
+                            <th colspan="2">Imperial</th>
+                            <th>Metric</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td colspan="2">1 inch [in]</td>
+                            <td>2.54 cm</td>
+                        </tr>
+                        </tr>
+                        <td>1 foot [ft]</td>
+                        <td>12 in</td>
+                        <td>0.3048 m</td>
+                        </tr>
+                        </tr>
+                        <td>1 yard [yd]</td>
+                        <td>3 ft</td>
+                        <td>0.9144 m</td>
+                        </tr>
+                        </tr>
+                        <td>1 mile</td>
+                        <td>1760 yd</td>
+                        <td>1.6093 km</td>
+                        </tr>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-            <div class="col-md-6">
-                <table class="table table-condensed table-striped">
-                    <thead>
-                    <tr>
-                        <th colspan="2">Imperial</th>
-                        <th>Metric</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td colspan="2">1 inch [in]</td>
-                        <td>2.54 cm</td>
-                    </tr>
-                    </tr>
-                    <td>1 foot [ft]</td>
-                    <td>12 in</td>
-                    <td>0.3048 m</td>
-                    </tr>
-                    </tr>
-                    <td>1 yard [yd]</td>
-                    <td>3 ft</td>
-                    <td>0.9144 m</td>
-                    </tr>
-                    </tr>
-                    <td>1 mile</td>
-                    <td>1760 yd</td>
-                    <td>1.6093 km</td>
-                    </tr>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-            </div>
+        </div>
     </div>
+    <div class="container-convert">
+        SELECT AND TYPE A VALUE IN ANY OF THE FIELDS TO CONVERT BETWEEN LENGTH MEASUREMENGTS
+    </div>
+    <div class="ruler">
+        <img src="images/ruler.png">
+    </div>
+
+    <div class="intro">
+        <i class="far fa-smile-wink"></i>  On this page, we would like to introduce you to 8 units in the field of Length:
+    </div>
+    <div class="container">
+        <div class="listunit">
+            <ul>
+                <li>inch :</li>
+                The inch (abbreviation: in or ″) is a unit of length in the (British) imperial and United States customary systems of measurement
+                <a href="#">Show more...</a>
+                <li>foot :</li>
+                The foot is a unit for measuring length. It is one of the Imperial units and U.S. customary units. The shortest way of writing the unit "foot" is by the abbreviation "ft" (or "ft."), or by a prime symbol ( ′ )
+                <a href="#">Show more...</a>
+                <li>yard :</li>
+                The yard (abbreviation: yd) is an English unit of length, in both the British imperial and US customary systems of measurement
+                <a href="#">Show more...</a>
+                <li>Mile :</li>
+                The Mile (abbreviation: M) is an English unit of length of linear measure equal to 5,280 feet, or 1,760 yards, and standardised as exactly 1,609.344 metres by international agreement in 1959
+                <a href="#">Show more...</a>
+                <li>millimeter :</li>
+                The millimetre (international spelling; SI unit symbol mm) or millimeter (American spelling) is a unit of length in the metric system
+                <a href="#">Show more...</a>
+                <li>meter :</li>
+                Metre (m), also spelled meter, in measurement, fundamental unit of length in the metric system and in the International Systems of Units (SI)
+                <a href="#">Show more...</a>
+                <li>kilometer :</li>
+                The kilometre (SI symbol: km; /ˈkɪləmiːtər/ or /kɪˈlɒmɪtər/), spelt kilometer in American English, is a unit of length in the metric system
+                <a href="#">Show more...</a>
+                <li>centimeter :</li>
+                The centimetre (cm), also spelled centimeter, unit of length equal to 0.01 metre in the metric system
+                <a href="#">Show more...</a>
+            </ul>
+        </div>
     </div>
 </section>
 
