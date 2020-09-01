@@ -12,9 +12,7 @@ body{
 /*    font-size: 40px;*/
 /*    text-align: center;*/
 /*}*/
-video{
-    object-fit:cover ;
-}
+
 .length-convert h1{
     margin: 0;
     padding: 0;
@@ -50,7 +48,7 @@ video{
     animation-delay: 1s;
 }
 .length-convert h1 span:nth-child(2) {
-    animation-delay: 2.5s;
+    animation-delay: 2s;
 }
 .length-convert h1 span:nth-child(3) {
     animation-delay: 3s;
@@ -59,7 +57,7 @@ video{
     animation-delay: 4s;
 }
 .length-convert h1 span:nth-child(5) {
-    animation-delay: 6s;
+    animation-delay: 5s;
 }
 
 .buttonnext {
