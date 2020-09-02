@@ -10,7 +10,7 @@ body{
 img{
     max-width: 100%;
 }
-.length h1{
+.length-head h1{
     text-align: center;
     font-family: 'Fredoka One', cursive;
     font-weight: 500;
@@ -92,6 +92,22 @@ img{
 .input-unit a:hover{
     text-decoration: none;
 }
-.introduce{
-    background-color: #e5f3f7;
+.length-body{
+    background-color: #e5f3f7 !important;
+}
+.length-foot{
+    font-size: 50px;
+    text-align: center;
+    padding-top: 3%;
+    background-color: #e5f3f7 !important;
+}
+.length-foot a{
+    color: #000000;
+}
+.length-foot a:hover{
+    color: #5a6268;
+    text-decoration: none;
+}
+.listunit{
+    padding-top: 5%;
 }
