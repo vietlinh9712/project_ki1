@@ -1,5 +1,5 @@
 body{
-    background-image: url("../images/unnamed.jpg");
+    /*background-image: url("../images/unnamed.jpg");*/
     background-size: cover;
 }
 *{
@@ -10,10 +10,34 @@ body{
 img{
     max-width: 100%;
 }
+
+.length-head{
+    background-image: url("../images/background-web/pexels-miguel-á-padriñán-19670.jpg");
+    background-size: cover;
+}
+
+.input-unit{
+    background-image: linear-gradient(to bottom right, #0963ef, #03ffd5);
+    width: 100%;
+    height: auto;
+    float: left;
+}
+
+.input-unit .label >a{
+    color: black;
+}
+
+.input-field{
+    float: left;
+    margin: 5px 0;
+}
+
 .length-head h1{
     text-align: center;
     font-family: 'Fredoka One', cursive;
     font-weight: 500;
+    margin-top: 0 !important;
+    padding-top: 40px;
 }
 .intro{
     margin-top: 40px;
@@ -21,7 +45,7 @@ img{
     font-family: 'Ubuntu Condensed', sans-serif;
     font-size: 30px;
 }
-.listunit li{
+.list-unit li{
     font-family: 'Satisfy', cursive;
     font-size: 30px;
     font-weight: 500;
