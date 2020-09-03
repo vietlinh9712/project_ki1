@@ -21,3 +21,17 @@ INSERT INTO SoSanh(TenSoSanh,LoaiTienChuan,LoaiQuyDoi,TiLe)
 SELECT * FROM TienTe
 SELECT * FROM QuocKi
 SELECT * FROM SoSanh
+
+
+CREATE VIEW view_tiente
+AS
+SELECT QuocGia.TenQuocGia,TienTe.FullName,TienTe.KiHieu,QuocKi.Thumbnail,SoSanh.*
+FROM QuocGia
+INNER JOIN QuocKi
+ON QuocGia.MaQuocGia = QuocKi.MaQuocGia
+INNER JOIN TienTe
+ON QuocGia.MaQuocGia = TienTe.QuocGia
+INNER JOIN SoSanh
+ON TienTe.ID = SoSanh.LoaiQuyDoi
+
+SELECT * FROM view_tiente
