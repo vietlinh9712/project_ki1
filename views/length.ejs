@@ -2,23 +2,160 @@
 <html>
 <head>
     <%-include('layout/head')%>
-    <link rel="stylesheet" type="text/css" href="./stylesheets/length.css">
-    <title>LENGTH</title>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/length-converter.css">
+    <link rel="stylesheet" type="text/css" href="./stylesheets/layout/nav-slider.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Pacifico&family=Ubuntu+Condensed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <title>LENGTH-Convert</title>
 </head>
 <body>
 <%-include('layout/header')%>
-<section class="length-convert">
-        <video src="video/smoke.mp4" autoplay muted></video>
-        <h1>
-            <span><i class="fab fa-angellist"> </i></span>
-            <span>WELCOME</span>
-            <span>TO</span>
-            <span>LENGTH-C<i class="fab fa-react" style="color: #00B7FF;"></i>NVERTER</span>
-            <span class="next col-md-12">
-                <button class="buttonnext"><span><a href="length-convert">Next</a></span></button>
-            </span>
-        </h1>
+<%-include('layout/nav-slider')%>
+<section class="length-head">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" >
+                <div class="input-unit col-md-12">
+                    <div class="label">
+                        <a href="#">Common <%=data[0].TenDanhMuc%> Units</a>
+                    </div>
+                    <form class="form-group">
+                        <%for(let unit of data){%>
+                        <div class="col-md-4 input-field">
+                            <label><%=unit.TenDonVi%>(<%=unit.KiHieu%>)</label>
+                            <input class="form-control" type="number" name="<%=unit.TenDonVi%>" placeholder="<%=unit.TenDonVi%>">
+                        </div>
+                        <%}%>
+                    </form>
+                </div>
+            </div>
+        </div>
 
+
+
+<!--            <div class="input-unit col-md-12">-->
+<!--                <div class="label">-->
+<!--                    <a href="##########">SI Length Units</a>-->
+<!--                </div>-->
+<!--                <div class="row">-->
+<!--                    <div class="convert col-md-4">-->
+<!--                        <input type="number" name="ym" placeholder="Yoctometers">-->
+<!--                        <input type="number" name="fm" placeholder="Femtometers">-->
+<!--                        <input type="number" name="µm" placeholder="micrometer [micron]">-->
+<!--                        <input type="number" name="dm" placeholder="Decimeters">-->
+<!--                        <input type="number" name="hm" placeholder="Hectomerters">-->
+<!--                        <input type="number" name="Gm" placeholder="Gigameters">-->
+<!--                        <input type="number" name="Em" placeholder="Exameters">-->
+<!--                    </div>-->
+<!--                    <div class="convert col-md-4">-->
+<!--                        <input type="number" name="zm" placeholder="Zeptometers">-->
+<!--                        <input type="number" name="pm" placeholder="Picometers">-->
+<!--                        <input type="number" name="mm" placeholder="Millimeters">-->
+<!--                        <input type="number" name="m" placeholder="Meters">-->
+<!--                        <input type="number" name="km" placeholder="Kilometers">-->
+<!--                        <input type="number" name="Tm" placeholder="Terameters">-->
+<!--                        <input type="number" name="Zm" placeholder="Zettameters">-->
+<!--                    </div>-->
+<!--                    <div class="convert col-md-4">-->
+<!--                        <input type="number" name="am" placeholder="Attometers">-->
+<!--                        <input type="number" name="nm" placeholder="Nanometers">-->
+<!--                        <input type="number" name="cm" placeholder="Centimeters">-->
+<!--                        <input type="number" name="dam" placeholder="Decameters">-->
+<!--                        <input type="number" name="Mm" placeholder="Megameters">-->
+<!--                        <input type="number" name="Pm" placeholder="Petameters">-->
+<!--                        <div style="margin-bottom: 20px">-->
+<!--                            <input type="number" name="Ym" placeholder="Yottameters">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="input-unit col-md-12">-->
+<!--                <div class="label">-->
+<!--                    <a href="##########">Imperial, Englis, US Customery, International and other Length Units</a>-->
+<!--                </div>-->
+<!--                <div class="row">-->
+<!--                    <div class="convert col-md-4">-->
+<!--                        <input type="number" name="mil" placeholder="thou [mil/point]:">-->
+<!--                        <input type="number" name="yd" placeholder="Yards">-->
+<!--                        <input type="number" name="league" placeholder="League">-->
+<!--                        <input type="number" name="cable" placeholder="Cable(UK)">-->
+<!--                        <input type="number" name="nmi" placeholder="Nautical-mile(UK)">-->
+<!--                        <div style="margin-bottom: 20px">-->
+<!--                            <input type="number" name="ch" placeholder="Chain">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="convert col-md-4">-->
+<!--                        <input type="number" name="in" placeholder="Inches">-->
+<!--                        <input type="number" name="fur" placeholder="Furlong">-->
+<!--                        <input type="number" name="fath" placeholder="Fathom">-->
+<!--                        <input type="number" name="cable" placeholder="Cable(UK)">-->
+<!--                        <input type="number" name="li" placeholder="Link">-->
+<!--                    </div>-->
+<!--                    <div class="convert col-md-4">-->
+<!--                        <input type="number" name="ft" placeholder="Feet/Foot">-->
+<!--                        <input type="number" name="M" placeholder="Miles">-->
+<!--                        <input type="number" name="cable" placeholder="Cable">-->
+<!--                        <input type="number" name="nmi" placeholder="Nautical-mile">-->
+<!--                        <input type="number" name="rd" placeholder="Rod [pole/perch]">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+        </div>
 </section>
+<div class="introduce">
+    <div class="container-convert">
+        <div class="intro">
+            <i class="far fa-smile-wink"></i>  On this page, we would like to introduce you to 8 units in the field of Length:
+        </div>
+    </div>
+    <div class="ruler">
+        <img src="images/ruler.png">
+    </div>
+</div>
+
+<div class="length-body">
+        <div class="container">
+            <div class="listunit">
+                <ul>
+                    <li>inch :</li>
+                    The inch (abbreviation: in or ″) is a unit of length in the (British) imperial and United States customary systems of measurement
+                    <a href="#">Show more...</a>
+                    <li>foot :</li>
+                    The foot is a unit for measuring length. It is one of the Imperial units and U.S. customary units. The shortest way of writing the unit "foot" is by the abbreviation "ft" (or "ft."), or by a prime symbol ( ′ )
+                    <a href="#">Show more...</a>
+                    <li>yard :</li>
+                    The yard (abbreviation: yd) is an English unit of length, in both the British imperial and US customary systems of measurement
+                    <a href="#">Show more...</a>
+                    <li>Mile :</li>
+                    The Mile (abbreviation: M) is an English unit of length of linear measure equal to 5,280 feet, or 1,760 yards, and standardised as exactly 1,609.344 metres by international agreement in 1959
+                    <a href="#">Show more...</a>
+                    <li>millimeter :</li>
+                    The millimetre (international spelling; SI unit symbol mm) or millimeter (American spelling) is a unit of length in the metric system
+                    <a href="#">Show more...</a>
+                    <li>meter :</li>
+                    Metre (m), also spelled meter, in measurement, fundamental unit of length in the metric system and in the International Systems of Units (SI)
+                    <a href="#">Show more...</a>
+                    <li>kilometer :</li>
+                    The kilometre (SI symbol: km; /ˈkɪləmiːtər/ or /kɪˈlɒmɪtər/), spelt kilometer in American English, is a unit of length in the metric system
+                    <a href="#">Show more...</a>
+                    <li>centimeter :</li>
+                    The centimetre (cm), also spelled centimeter, unit of length equal to 0.01 metre in the metric system
+                    <a href="#">Show more...</a>
+                </ul>
+            </div>
+        </div>
+    <div class="length-foot">
+        <a href="#">See More...</a>
+    </div>
+    </div>
+
+<script type="text/javascript">
+    $('.autoScroll').bind('click',() => {
+        console.log('click');
+        $('body,html').animate({scrollTop: 400  }, 500);
+    });
+</script>
 </body>
+
 </html>

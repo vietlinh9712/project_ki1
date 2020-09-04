@@ -2,9 +2,9 @@ const sql = require('mssql');
 
 const config = {
     user: 'sa',
-    password: '123456',
-    server: 'ADMIN\\SQLEXPRESS', // You can use 'localhost\\instance' to connect to named instance
-    database: 'Project_ki1',
+    password: 'z@GH7ytQ',
+    server: '101.99.13.2', // You can use 'localhost\\instance' to connect to named instance
+    database: 'test',
     options: {
         encrypt: false,
         enableArithAbort: true

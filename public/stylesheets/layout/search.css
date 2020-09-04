@@ -811,7 +811,7 @@ legend {
 .sreach{
   width: 100%;
   height: 300px;
-  background-color: #95cedb;
+  background-image: url("../../images/background-web/technology.jpg");
 }
 .set-search-input{
   position: relative;
