@@ -18,45 +18,15 @@
             <div class="col-md-12" >
                 <div class="input-unit col-md-12">
                     <div class="label">
-                        <a href="#">Common Length Units</a>
+                        <a href="#">Common <%=data[0].TenDanhMuc%> Units</a>
                     </div>
                     <form class="form-group">
+                        <%for(let unit of data){%>
                         <div class="col-md-4 input-field">
-                            <label>Millimeters</label>
-                            <input class="form-control" type="number" name="mm" placeholder="Millimeters">
+                            <label><%=unit.TenDonVi%>(<%=unit.KiHieu%>)</label>
+                            <input class="form-control" type="number" name="<%=unit.TenDonVi%>" placeholder="<%=unit.TenDonVi%>">
                         </div>
-                        <div class="col-md-4 input-field">
-                            <label>Kilometers</label>
-                            <input class="form-control" type="number" name="km" placeholder="Kilometers">
-                        </div>
-                        <div class="col-md-4 input-field">
-                            <label>Yards</label>
-                            <input class="form-control" type="number" name="yd" placeholder="Yards">
-                        </div>
-                        <div class="col-md-4 input-field">
-                            <label>Centimeters</label>
-                            <input class="form-control" type="number" name="cm" placeholder="Centimeters">
-                        </div>
-                        <div class="col-md-4 input-field">
-                            <label>Inches</label>
-                            <input class="form-control" type="number" name="in" placeholder="Inches">
-                        </div>
-                        <div class="col-md-4 input-field">
-                            <label>Miles</label>
-                            <input class="form-control" type="number" name="M" placeholder="Miles">
-                        </div>
-                        <div class="col-md-4 input-field">
-                            <label>Meters</label>
-                            <input class="form-control" type="number" name="m" placeholder="Meters">
-                        </div>
-                        <div class="col-md-4 input-field">
-                            <label>Feet/Foot</label>
-                            <input class="form-control" type="number" name="ft" placeholder="Feet/Foot">
-                        </div>
-                        <div class="col-md-4 input-field">
-                            <label>Nautical Mile</label>
-                            <input class="form-control" type="number" name="nautical-mile" placeholder="Nautical Mile">
-                        </div>
+                        <%}%>
                     </form>
                 </div>
             </div>
@@ -179,6 +149,13 @@
         <a href="#">See More...</a>
     </div>
     </div>
+
+<script type="text/javascript">
+    $('.autoScroll').bind('click',() => {
+        console.log('click');
+        $('body,html').animate({scrollTop: 400  }, 500);
+    });
+</script>
 </body>
 
 </html>

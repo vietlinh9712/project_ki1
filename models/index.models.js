@@ -11,7 +11,12 @@ const config = {
     }
 }
 
-const pool = sql.connect(config,function (err) {
-    if (err) console.log(err);
-});
+module.exports.getData = async function (name) {
+    const pool = await sql.connect(config);
+    let result = await pool.request()
+        .input('type',sql.NVarChar,name)
+        .execute('get_measure_by_type');
+    if (result.recordset) return result.recordset ;
+    else return [];
+}
 
