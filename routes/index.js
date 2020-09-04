@@ -15,5 +15,8 @@ router.get('/length', function(req, res, next) {
 router.get('/length-convert', function(req, res, next) {
   res.render('length-convert');
 });
+router.get('/search',function (req,res, next) {
+  res.render('search_index');
+})
 module.exports = router;
 
