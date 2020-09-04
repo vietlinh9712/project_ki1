@@ -48,11 +48,10 @@ function processWhenUserOutSearch() {// hidden dropdown when user click out inpu
     inputSearch.bind('focusin', () => {
         dropdownWhenSearch.show();
     })
-    inputSearch.bind('focusout',async () => {
-        await $('#list_search').bind('click', () => {
-            dropdownWhenSearch.show()
+    inputSearch.bind('focusout', () => {
+        $('#list_search').bind('mouseleave', () => {
+            dropdownWhenSearch.hide()
         })
-        await dropdownWhenSearch.hide();
     })
 }
 
