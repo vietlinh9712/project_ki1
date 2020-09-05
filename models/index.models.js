@@ -11,11 +11,20 @@ const config = {
     }
 }
 
-module.exports.getData = async function (name) {
+module.exports.getMeasureByType = async function (name) {
     const pool = await sql.connect(config);
     let result = await pool.request()
         .input('type',sql.NVarChar,name)
         .execute('get_measure_by_type');
+    if (result.recordset) return result.recordset ;
+    else return [];
+}
+
+module.exports.getConversionRate = async function (name) {
+    const pool = await sql.connect(config);
+    let result = await pool.request()
+        .input('type',sql.NVarChar,name)
+        .execute('get_conversion_rate');
     if (result.recordset) return result.recordset ;
     else return [];
 }

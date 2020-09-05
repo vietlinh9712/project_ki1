@@ -22,6 +22,8 @@ router.get('/search',function (req,res, next) {
   res.render('search_index');
 })
 
+router.post('/getRate',controller.postLength);
+
 
 module.exports = router;
 
