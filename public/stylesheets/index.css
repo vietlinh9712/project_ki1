@@ -72,27 +72,21 @@ nav .rankings ul li .exchange-rage{
 }
 
 .home-boxes{
+    font-family: sans-serif;
     float: left;
     height: 180px;
-    border: 1px dashed black;
     border-radius: 7px;
-    margin-bottom: 3%;
-    margin-top: 2%;
-}
-.home-boxes-icon-title{
-    /*float: right;*/
-    border-bottom: 1px dashed black;
-    height: 50px;
-}
-.home-boxes-icon{
-    float: left;
-}
-.home-boxes-title{
-    text-align: center;
-    margin-top: 4%;
-    font-weight: 700;
-    font-size: 18px;
+    margin-bottom: 3% !important;
+    margin-top: 15%;
 }
 
+.home-boxes img{
+    width: 50%;
+    height: 50%;
+    margin-bottom: calc(50% - 40px);
+}
 
-
+.home-boxes figcaption{
+    margin: -10px;
+    text-align: match-parent;
+}
