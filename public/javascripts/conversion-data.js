@@ -14,7 +14,6 @@ $.ajax({
 
 function calculationUsingRateFromServer(result) {
     conversionRateFromDatabase = result;
-    console.log(result);
 }
 
 let allInputFlied = $('.conversion-unit');
@@ -23,22 +22,23 @@ allInputFlied.bind('input',async function() {
     let UserInput = $(this);
     let userInputRate = {};
     await conversionRateFromDatabase.forEach(e => {
-        if (e.DonViChuan === Number(UserInput.attr('name'))){
+        if (e.DonViQuyDoi === Number(UserInput.attr('name'))){
             userInputRate = e;
         }
     });
-    console.log(userInputRate);
     for (let conversionRate of conversionRateFromDatabase){
         for(let inputField of allInputFlied) {
             if (Number($(inputField).attr('name')) !== userInputRate.DonViQuyDoi){
                 if (Number($(inputField).attr('name')) === conversionRate.DonViQuyDoi){
-                    let rateOfThisElement = Number.parseFloat(conversionRate.TiLe);
-                    let resultOfConversion = (Number.parseFloat(UserInput.val())*userInputRate.TiLe) / rateOfThisElement;
-                    console.log(UserInput.val()+'111');
+                    let rateOfThisElement = Number(conversionRate.TiLe);
+                    let resultOfConversion = (Number(UserInput.val())*Number(userInputRate.TiLe)) / rateOfThisElement;
+                    console.log(Number.parseFloat(UserInput.val()));
+                    console.log(Number.parseFloat(userInputRate.TiLe));
+                    console.log(rateOfThisElement);
                     if (UserInput.val() === '' || isNaN(UserInput.val())){
                         $(inputField).val('');
                     }else {
-                        $(inputField).val(resultOfConversion);
+                        $(inputField).val(Number(resultOfConversion.toPrecision(12)));
                     }
                 }
             }
