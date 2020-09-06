@@ -8,15 +8,7 @@ router.get('/', function(req, res, next) {
   res.render('index');
 });
 
-router.get('/length',controller.getLength);
-
-router.get('/Area',controller.getArea);
-
-router.get('/Volume',controller.getVolume);
-
-router.get('/Temperature',controller.getTemperature);
-
-router.get('/Currency',controller.getLength);
+router.get('/:unit',controller.displayPageConversion);
 
 router.get('/search',function (req,res, next) {
   res.render('search_index');
