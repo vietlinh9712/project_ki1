@@ -8,8 +8,12 @@ module.exports.displayPageConversion =async function (req,res,next) {
     })
 }
 
-module.exports.postLength = async function(req,res,next){
+module.exports.getConversionRate = async function(req,res,next){
     let key = req.body.key;
     let conversionRate = await models.getConversionRate(key);
     res.send(conversionRate);
+}
+
+module.exports.getTopCurrency = function (req,res) {
+
 }

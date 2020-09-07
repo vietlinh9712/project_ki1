@@ -2,7 +2,7 @@ let conversionRateFromDatabase = [];
 let url = document.location.pathname;
 let key = url.replace('/','');
 $.ajax({
-    url: '/getRate',
+    url: '/api/getRate',
     method: 'post',
     data: {
         key: key
@@ -32,10 +32,7 @@ allInputFlied.bind('input',async function() {
                 if (Number($(inputField).attr('name')) === conversionRate.DonViQuyDoi){
                     let rateOfThisElement = Number(conversionRate.TiLe);
                     let resultOfConversion = (Number(UserInput.val())*Number(userInputRate.TiLe)) / rateOfThisElement;
-                    console.log(Number.parseFloat(UserInput.val()));
-                    console.log(Number.parseFloat(userInputRate.TiLe));
-                    console.log(rateOfThisElement);
-                    if (UserInput.val() === '' || isNaN(UserInput.val())){
+                    if (UserInput.val() === '' || isNaN(UserInput.val()) || resultOfConversion == 'Infinity'){
                         $(inputField).val('');
                     }else {
                         $(inputField).val(Number(resultOfConversion.toPrecision(12)));

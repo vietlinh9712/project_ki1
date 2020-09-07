@@ -14,7 +14,9 @@ router.get('/search',function (req,res, next) {
   res.render('search_index');
 })
 
-router.post('/getRate',controller.postLength);
+router.post('/api/getRate',controller.getConversionRate);
+
+router.get('/api/getTopCurrency',controller.getTopCurrency)
 
 
 module.exports = router;

@@ -29,3 +29,8 @@ module.exports.getConversionRate = async function (name) {
     else return [];
 }
 
+module.exports.getTopCurrency = async function () {
+    const pool = await sql.connect(config);
+    let result = await pool.request()
+        .execute('get_conversion_rate');
+}

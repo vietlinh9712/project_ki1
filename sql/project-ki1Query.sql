@@ -206,7 +206,9 @@ INSERT INTO T2004E_NhomViet_DonVi(TenDonVi,KiHieu,DanhMucID,DoPhoBien)
 		  ('Zimbabwean Dollar','ZWD',6,Null)
 
 INSERT INTO T2004E_NhomViet_SoSanh(TenSoSanh,DanhMucID,DonViQuyDoi,DonViChuan,TiLe)
-	VALUES('inch to met',1,'1','5',0.0254),
+	VALUES('met to met',1,'5',5,1)
+	
+	('inch to met',1,'1','5',0.0254),
 		  ('feet to met',1,'2','5',0.3048),
 		  ('yard to met',1,'3','5',0.9144),
 		  ('millimet to met',1,'4','5',0.001),
