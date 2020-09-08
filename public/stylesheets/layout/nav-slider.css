@@ -1,0 +1,12 @@
+.carousel-item{
+    max-height: 400px !important;
+}
+
+.carousel-item>img{
+    width: 100%;
+}
+
+.carousel-caption{
+    color: rgba(229, 189, 196, 0.89) !important;
+    font-weight: 700 !important;
+}

@@ -4,7 +4,7 @@ INSERT INTO DanhMuc(TenDanhMuc)
 		  ('Volume'),
 		  ('Mass'),
 		  ('Temperature')
-INSERT INTO DonVi(TenDonVi,KiHieu,DanhMucID)
+INSERT INTO T2004E_NhomViet_DonVi(TenDonVi,KiHieu,DanhMucID)
 	VALUES('Inches','in',1),
 	      ('Feet','ft',1),
 		  ('Yards','yd',1),
@@ -36,18 +36,19 @@ INSERT INTO DonVi(TenDonVi,KiHieu,DanhMucID)
 
 		  ('Fahrenheit','°F',5),
 		  ('Celsius','°C',5)
-INSERT INTO SoSanh(TenSoSanh,DonViQuyDoi,DonViChuan,TiLe)
-	VALUES('inch to met',1,6,0.0254),
-		  ('feet to met',2,6,0.3048),
-		  ('yard to met',3,6,0.9144),
-		  ('Mile to met',4,6,1609),
-		  ('millimet to met',5,6,0.001),
-		  ('kilomet to met',7,6,1000),
-		  ('centimet to met',8,6,0.01)
+INSERT INTO T2004E_NhomViet_SoSanh(TenSoSanh,DonViQuyDoi,DonViChuan,DanhmucID,TiLe)
+	VALUES('inch to met','Inches','Meters',1,0.0254),
+		  ('feet to met','Feet','Meters',1,0.3048),
+		  ('yard to met','Yards','Meters',1,0.9144),
+		  ('Mile to met','Miles','Meters',1,1609),
+		  ('millimet to met','millimeters','Meters',1,0.001),
+		  ('kilomet to met','kilometers','Meters',1,1000),
+		  ('centimet to met','centimeters','Meters',1,0.01)
+		  ('met to met','Meters','Meters',1,1)
 
 SELECT * FROM DanhMuc
-SELECT * FROM DonVi
-SELECT * FROM SoSanh
+SELECT * FROM T2004E_NhomViet_DonVi
+SELECT * FROM T2004E_NhomViet_SoSanh
 
 CREATE VIEW view_so_sanh
 AS

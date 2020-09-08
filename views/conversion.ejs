@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%-include('layout/head')%>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/length-converter.css">
+    <link rel="stylesheet" type="text/css" href="./stylesheets/layout/nav-slider.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Pacifico&family=Ubuntu+Condensed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <title><%=data[0].TenDanhMuc%> Conversion</title>
+</head>
+<body>
+<%-include('layout/header')%>
+<%-include('layout/nav-slider')%>
+<section class="length-head">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" >
+                <div class="input-unit col-md-12">
+                    <div class="label">
+                        <a href="#">Common <%=data[0].TenDanhMuc%> Units</a>
+                    </div>
+                    <form class="form-group">
+                        <%for(let unit of data){%>
+                        <div class="col-md-4 input-field">
+                            <label><%=unit.TenDonVi%>(<%=unit.KiHieu%>)</label>
+                            <input id="<%=unit.TenDonVi%>" class="form-control conversion-unit" type="text" name="<%=unit.DonViID%>" placeholder="<%=unit.TenDonVi%>">
+                        </div>
+                        <%}%>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="introduce">
+    <div class="container-convert">
+        <div class="intro">
+            <i class="far fa-smile-wink"></i>  On this page, we would like to introduce you to 8 units in the field of Length:
+        </div>
+    </div>
+    <div class="ruler">
+        <img src="images/ruler.png">
+    </div>
+</div>
+
+<div class="length-body">
+        <div class="container">
+            <div class="listunit">
+                <ul>
+                    <li>inch :</li>
+                    The inch (abbreviation: in or ″) is a unit of length in the (British) imperial and United States customary systems of measurement
+                    <a href="#">Show more...</a>
+                    <li>foot :</li>
+                    The foot is a unit for measuring length. It is one of the Imperial units and U.S. customary units. The shortest way of writing the unit "foot" is by the abbreviation "ft" (or "ft."), or by a prime symbol ( ′ )
+                    <a href="#">Show more...</a>
+                    <li>yard :</li>
+                    The yard (abbreviation: yd) is an English unit of length, in both the British imperial and US customary systems of measurement
+                    <a href="#">Show more...</a>
+                    <li>Mile :</li>
+                    The Mile (abbreviation: M) is an English unit of length of linear measure equal to 5,280 feet, or 1,760 yards, and standardised as exactly 1,609.344 metres by international agreement in 1959
+                    <a href="#">Show more...</a>
+                    <li>millimeter :</li>
+                    The millimetre (international spelling; SI unit symbol mm) or millimeter (American spelling) is a unit of length in the metric system
+                    <a href="#">Show more...</a>
+                    <li>meter :</li>
+                    Metre (m), also spelled meter, in measurement, fundamental unit of length in the metric system and in the International Systems of Units (SI)
+                    <a href="#">Show more...</a>
+                    <li>kilometer :</li>
+                    The kilometre (SI symbol: km; /ˈkɪləmiːtər/ or /kɪˈlɒmɪtər/), spelt kilometer in American English, is a unit of length in the metric system
+                    <a href="#">Show more...</a>
+                    <li>centimeter :</li>
+                    The centimetre (cm), also spelled centimeter, unit of length equal to 0.01 metre in the metric system
+                    <a href="#">Show more...</a>
+                </ul>
+            </div>
+        </div>
+    <div class="length-foot">
+        <a href="#">See More...</a>
+    </div>
+    </div>
+
+<script type="text/javascript">
+    $('.autoScroll').bind('click',() => {
+        console.log('click');
+        $('body,html').animate({scrollTop: 400  }, 500);
+    });
+</script>
+<script type="text/javascript" src="./javascripts/conversion-data.js"></script>
+</body>
+
+</html>

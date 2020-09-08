@@ -2,12 +2,35 @@ const sql = require('mssql');
 
 const config = {
     user: 'sa',
-    password: 'viet1997',
-    server: 'ADMIN\\SQLEXPRESS', // You can use 'localhost\\instance' to connect to named instance
-    database: 'Project_ki1'
+    password: 'z@GH7ytQ',
+    server: '101.99.13.2', // You can use 'localhost\\instance' to connect to named instance
+    database: 'test',
+    options: {
+        encrypt: false,
+        enableArithAbort: true
+    }
 }
 
-const pool = sql.connect(config,function (err) {
-    if (err) console.log(err);
-});
+module.exports.getMeasureByType = async function (name) {
+    const pool = await sql.connect(config);
+    let result = await pool.request()
+        .input('type',sql.NVarChar,name)
+        .execute('get_measure_by_type');
+    if (result.recordset) return result.recordset ;
+    else return [];
+}
 
+module.exports.getConversionRate = async function (name) {
+    const pool = await sql.connect(config);
+    let result = await pool.request()
+        .input('type',sql.NVarChar,name)
+        .execute('get_conversion_rate');
+    if (result.recordset) return result.recordset ;
+    else return [];
+}
+
+module.exports.getTopCurrency = async function () {
+    const pool = await sql.connect(config);
+    let result = await pool.request()
+        .execute('get_conversion_rate');
+}

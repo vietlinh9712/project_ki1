@@ -1,0 +1,15 @@
+body{
+    background-color: #00B7FF30;
+}
+.searched hr {
+    border-top: 2px solid rgba(0,0,0,0.2);
+}
+.card{
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    margin-top: 10px;
+}
+.card-img img{
+    border-radius: 5px 5px 0 0;
+}
