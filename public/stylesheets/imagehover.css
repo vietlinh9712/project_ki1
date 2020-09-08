@@ -764,7 +764,7 @@
 
 [class^='imghvr-fold']:hover > img, [class*=' imghvr-fold']:hover > img {
     opacity: 0;
-    transition-delay: 0;
+    transition-delay: 0s;
 }
 
 [class^='imghvr-fold']:hover figcaption, [class*=' imghvr-fold']:hover figcaption {
@@ -1054,7 +1054,7 @@
     -webkit-transform: rotateX(-100deg) translateY(50%) scale(0.5);
             transform: rotateX(-100deg) translateY(50%) scale(0.5);
     opacity: 0;
-    transition-delay: 0;
+    transition-delay: 0s;
 }
 
 .imghvr-zoom-out-flip-horiz:hover figcaption, .imghvr-zoom-out-flip-horiz.hover figcaption {
@@ -1081,7 +1081,7 @@
     -webkit-transform: rotateY(-100deg) translateX(50%) scale(0.5);
             transform: rotateY(-100deg) translateX(50%) scale(0.5);
     opacity: 0;
-    transition-delay: 0;
+    transition-delay: 0s;
 }
 
 .imghvr-zoom-out-flip-vert:hover figcaption, .imghvr-zoom-out-flip-vert.hover figcaption {
