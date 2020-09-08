@@ -2,8 +2,9 @@
     width: 100%;
     height: auto;
     padding-top: 20px;
-    background-image: url("../images/background-web/pexels-miguel-á-padriñán-19670.jpg");
+    /*background-image: url("../images/background-web/2352701.jpg");*/
     background-size: cover;
+    background-color: #fff;
 }
 
 nav .rankings{
@@ -72,7 +73,7 @@ nav .rankings ul li .exchange-rage{
 }
 
 .home-boxes{
-    font-family: sans-serif;
+    font-family: Roboto, serif;
     float: left;
     height: 180px;
     border-radius: 7px;
