@@ -78,6 +78,7 @@ nav .rankings ul li .exchange-rage{
     border-radius: 7px;
     margin-bottom: 3% !important;
     margin-top: 15%;
+    position: relative;
 }
 
 .home-boxes img{
@@ -89,4 +90,10 @@ nav .rankings ul li .exchange-rage{
 .home-boxes figcaption{
     margin: -10px;
     text-align: match-parent;
+}
+.home-boxes p{
+    color: black;
+    position: absolute;
+    bottom: 5%;
+    font-weight: 600;
 }
