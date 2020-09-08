@@ -435,11 +435,20 @@
             backface-visibility: hidden;
 }
 
+[class^='imghvr-flip-'] p, [class*=' imghvr-flip-'] p {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
 [class^='imghvr-flip-'] figcaption, [class*=' imghvr-flip-'] figcaption {
     opacity: 0;
 }
 
-[class^='imghvr-flip-']:hover > img, [class*=' imghvr-flip-']:hover > img {
+[class^='imghvr-flip-']:hover > img , [class*=' imghvr-flip-']:hover > img{
+    opacity: 0;
+}
+
+[class^='imghvr-flip-']:hover > p , [class*=' imghvr-flip-']:hover > p{
     opacity: 0;
 }
 
@@ -461,6 +470,7 @@
     -webkit-transform: rotateX(-180deg);
             transform: rotateX(-180deg);
 }
+
 
 .imghvr-flip-horiz:hover figcaption {
     -webkit-transform: rotateX(0deg);
