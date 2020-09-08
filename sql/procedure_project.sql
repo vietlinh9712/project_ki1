@@ -5,9 +5,10 @@ AS
 
 CREATE PROCEDURE getTopCurrency
 AS
-	SELECT * FROM T2004E_NhomViet_DonVi AS DonVi WHERE DanhMucID = 6
+	SELECT * FROM T2004E_NhomViet_DonVi AS DonVi
 	INNER JOIN T2004E_NhomViet_SoSanh AS SoSanh
-	ON DonVi.DanhMuc
+	ON DonVi.DonViID = SoSanh.DonViChuan
+	WHERE DonVi.DanhMucID = 6
 
 SELECT * FROM T2004E_NhomViet_DonVi
 SELECT * FROM T2004E_NhomViet_SoSanh

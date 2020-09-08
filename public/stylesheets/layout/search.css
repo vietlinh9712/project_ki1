@@ -831,8 +831,13 @@ legend {
   display: none;
 }
 
-.dropdown-item{
+.dropdown-items{
   height: 50px;
+}
+
+.dropdown-item{
+  width: 100%;
+  height: 100%;
 }
 
 .s010 {
@@ -1002,6 +1007,10 @@ legend {
     width: 30px;
     height: 30px;
   }
+}
+
+.dropdown-item-hover{
+  background-color: red;
 }
 
 /*# sourceMappingURL=Searchs_010.css.map */
