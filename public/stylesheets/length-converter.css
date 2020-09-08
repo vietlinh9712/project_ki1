@@ -1,6 +1,5 @@
 body{
-    /*background-image: url("../images/unnamed.jpg");*/
-    background-size: cover;
+
 }
 *{
     margin: 0;
@@ -12,12 +11,10 @@ img{
 }
 
 .length-head{
-    background-image: url("../images/background-web/pexels-miguel-á-padriñán-19670.jpg");
-    background-size: cover;
 }
 
 .input-unit{
-    background-image: linear-gradient(to bottom right, #0963ef, #03ffd5);
+    background-color: #FFE081;
     width: 100%;
     height: auto;
     float: left;
@@ -26,6 +23,10 @@ img{
 
 .input-unit .label >a{
     color: black;
+}
+
+.conversion-unit{
+    box-shadow: none !important;
 }
 
 .input-field{
@@ -95,8 +96,12 @@ img{
 }
 
 .label{
-    margin:10px 0;
+    padding:10px 15px;
+    margin: 0 -15px;
     font-size: 20px;
+    font-weight: 600;
+    background-color: #f0ad4e;
+    border-radius: 5px 5px 0 0;
 }
 .convert input{
     width: 100%;
@@ -109,7 +114,6 @@ img{
     border: none;
     border-radius: 5px;
     margin: 40px 0;
-    background-color: whitesmoke !important;
     background-size: cover;
 }
 .input-unit a:hover{
@@ -134,48 +138,3 @@ img{
 .listunit{
     padding-top: 5%;
 }
-
-/**, *::before, *::after {*/
-/*    box-sizing: border-box;*/
-/*}*/
-/*@keyframes rotate {*/
-/*    100% {*/
-/*        transform: rotate(1turn);*/
-/*    }*/
-/*}*/
-
-/*.input-unit {*/
-/*    position: relative;*/
-/*    z-index: 0;*/
-/*    border-radius: 10px;*/
-/*    overflow: hidden;*/
-/*    padding: 2rem;*/
-/*}*/
-
-/*.input-unit::before {*/
-/*    content: '';*/
-/*    position: absolute;*/
-/*    z-index: -2;*/
-/*    left: -50%;*/
-/*    top: -50%;*/
-/*    width: 200%;*/
-/*    height: 200%;*/
-/*    background-color: #399953;*/
-/*    background-repeat: no-repeat;*/
-/*    background-size: 50% 50%, 50% 50%;*/
-/*    background-position: 0 0, 100% 0, 100% 100%, 0 100%;*/
-/*    background-image: linear-gradient(#399953, #399953), linear-gradient(#fbb300, #fbb300), linear-gradient(#d53e33, #d53e33), linear-gradient(#377af5, #377af5);*/
-/*    animation: rotate 4s linear infinite;*/
-/*}*/
-
-/*.input-unit::after {*/
-/*    content: '';*/
-/*    position: absolute;*/
-/*    z-index: -1;*/
-/*    left: 6px;*/
-/*    top: 6px;*/
-/*    width: calc(100% - 12px);*/
-/*    height: calc(100% - 12px);*/
-/*    background: white;*/
-/*    border-radius: 5px;*/
-/*}*/

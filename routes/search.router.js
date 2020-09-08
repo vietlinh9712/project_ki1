@@ -5,8 +5,8 @@ const controller = require('../controller/search.controller')
 
 router.get('/',controller.getSearch);
 
-router.get('/search-index',function (req,res) {
-    res.render('search_index');
+router.get('/:key',function (req,res) {
+    console.log(req.params.key);
 })
 
 router.post('/',controller.postSearch);

@@ -45,15 +45,15 @@ allInputFlied.bind('input',async function() {
     }
 })
 
-allInputFlied.bind('focusin',function () {
-    $(this).css({
-        'background-color' : 'rgb(255,231,0)',
-        'border': '2px solid black'});
-})
-allInputFlied.bind('focusout',function () {
-    $(this).css({
-        'background-color' : 'white',
-        'border':'1px solid #ced4da'
-    });
-})
+// allInputFlied.bind('focusin',function () {
+//     $(this).css({
+//         'background-color' : 'rgb(248,248,248)',
+//         'border': '1px solid #ced4da'});
+// })
+// allInputFlied.bind('focusout',function () {
+//     $(this).css({
+//         'background-color' : 'white',
+//         'border':'1px solid #ced4da'
+//     });
+// })
 

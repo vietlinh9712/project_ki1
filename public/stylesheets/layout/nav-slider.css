@@ -1,5 +1,5 @@
 .carousel-item{
-    max-height: 400px !important;
+    max-height: 300px !important;
 }
 
 .carousel-item>img{
@@ -7,6 +7,5 @@
 }
 
 .carousel-caption{
-    color: rgba(229, 189, 196, 0.89) !important;
     font-weight: 700 !important;
 }

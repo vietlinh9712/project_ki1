@@ -10,10 +10,6 @@ router.get('/', function(req, res, next) {
 
 router.get('/:unit',controller.displayPageConversion);
 
-router.get('/search/search-index',function (req,res) {
-  res.render('search/search_index');
-})
-
 router.post('/api/getRate',controller.getConversionRate);
 
 router.get('/api/getTopCurrency',controller.getTopCurrency)
