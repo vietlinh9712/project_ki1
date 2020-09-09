@@ -1,5 +1,5 @@
 body{
-
+    background-color: #fafafa;
 }
 *{
     margin: 0;
@@ -14,11 +14,29 @@ img{
 }
 
 .input-unit{
-    background-color: #FFE081;
     width: 100%;
     height: auto;
     float: left;
+    border: none;
+    border-radius: 5px;
     padding-bottom: 20px;
+}
+
+.input-unit-1{
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.input-unit-2{
+    margin: 10px 0;
+}
+
+.input-unit-1{
+    background-color: #FFE081;
+}
+
+.input-unit-2{
+    background-color: #8EF3FF;
 }
 
 .input-unit .label >a{
@@ -100,9 +118,17 @@ img{
     margin: 0 -15px;
     font-size: 20px;
     font-weight: 600;
-    background-color: #f0ad4e;
     border-radius: 5px 5px 0 0;
 }
+
+.input-unit-1>.label{
+    background-color: #f0ad4e;
+}
+
+.input-unit-2>.label{
+    background-color: #5bc0de;
+}
+
 .convert input{
     width: 100%;
     height: 32px;
@@ -110,12 +136,7 @@ img{
     margin: 10px 0;
     border-radius: 5px;
 }
-.input-unit{
-    border: none;
-    border-radius: 5px;
-    margin: 40px 0;
-    background-size: cover;
-}
+
 .input-unit a:hover{
     text-decoration: none;
 }

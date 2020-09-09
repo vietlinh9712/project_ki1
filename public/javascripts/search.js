@@ -36,7 +36,12 @@ function processDataReceiveFromServer (result) {
         dropdownWhenSearch.css("display","none");
     }
     result.forEach(function (e) {
-        dropdownWhenSearch.append("<li class=\"dropdown-items\" ><a class=\"dropdown-item\" href='/length-convert'>"+e.name+"</a></li>")
+        dropdownWhenSearch.append("<li class=\"dropdown-items \" >" +
+                                    "<a class=\"dropdown-item \" href='length-convert'>"
+                                        +"<span class='text-left set-name'>"+e.name+" ("+e.symbol+")"+"</span>"
+                                        +"<span class='text-right set-type '>"+e.type+ "</span>" +
+            "                        </a>" +
+            "                       </li>")
     })
 }
 

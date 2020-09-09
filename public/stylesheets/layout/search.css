@@ -808,38 +808,6 @@ legend {
   box-sizing: border-box;
 }
 
-.sreach{
-  width: 100%;
-  height: 400px;
-  background-image: url("../../images/background-web/technology.jpg");
-}
-.set-search-input{
-  position: relative;
-}
-
-.dropdown{
-  width: 67%;
-  max-height: 300px;
-  position: absolute;
-  top: 99%;
-  left: 16.5%;
-}
-
-.dropdown-menu{
-  max-height: 300px !important;
-  width: 100%;
-  display: none;
-}
-
-.dropdown-items{
-  height: 50px;
-}
-
-.dropdown-item{
-  width: 100%;
-  height: 100%;
-}
-
 .s010 {
   -ms-flex-pack: center;
   -ms-flex-align: center;
@@ -1013,4 +981,53 @@ legend {
   background-color: red;
 }
 
+.sreach{
+  width: 100%;
+  height: 400px;
+  background-image: url("../../images/background-web/technology.jpg");
+}
+.set-search-input{
+  position: relative;
+}
+
+.dropdown{
+  width: 67%;
+  max-height: 300px;
+  position: absolute;
+  top: 99%;
+  left: 16.5%;
+}
+
+.dropdown-menu{
+  max-height: 320px !important;
+  width: 100%;
+  display: none;
+}
+
+.dropdown-items{
+  height: 50px;
+  width: 100%;
+}
+
+.dropdown-item{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.set-name{
+  position: absolute;
+  top:10px;
+  left: 15px;
+  font-size: 1.1em;
+}
+
+.set-type{
+  text-align: right!important;
+  position: absolute;
+  right: 30px;
+  top: 10px;
+  color: rgba(64, 63, 63, 0.85);
+  font-size: 0.8em;
+}
 /*# sourceMappingURL=Searchs_010.css.map */

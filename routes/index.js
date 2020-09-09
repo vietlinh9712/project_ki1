@@ -4,9 +4,7 @@ var router = express.Router();
 const controller = require('../controller/index.controller')
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index');
-});
+router.get('/',controller.getIndex);
 
 router.get('/:unit',controller.displayPageConversion);
 

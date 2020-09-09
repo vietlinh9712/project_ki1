@@ -34,7 +34,7 @@ INSERT INTO T2004E_NhomViet_DonVi(TenDonVi,KiHieu,DoPhoBien,DanhMucID,QuocGia)
 		  ('Celsius','°C',1,5,NULL),
 
 		  ('Romanian Leu','RON',NULL,6,'Romania'),
-		  ('Swiss Franc','CHF',NULL,6,'Switzerland'),
+		  ('Swiss Franc','CHF',	,6,'Switzerland'),
 		  ('Russian Ruble','RUB',NULL,6,'Russian'),
 		  ('United States Dollar','USD',NULL,6,'America')
 
@@ -62,5 +62,8 @@ INSERT INTO T2004E_NhomViet_SoSanh(TenSoSanh,DonViQuyDoi,DonViChuan,DanhMucID,Ti
 
 SELECT * FROM T2004E_NhomViet_DanhMuc
 SELECT * FROM T2004E_NhomViet_QuocGia
-SELECT * FROM T2004E_NhomViet_DonVi
+ 
 SELECT * FROM T2004E_NhomViet_SoSanh
+UPDATE T2004E_NhomViet_DanhMuc
+SET TenDanhMuc = 'Currency'
+WHERE DanhMucID = 6

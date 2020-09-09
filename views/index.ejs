@@ -121,9 +121,15 @@
           <ul>
             <li class="wrap-title-rank">
               <div class="text-left title-rank rank">Name</div>
-              <div class="exchange-rage rank"><img src="../images/flags/quốc-kỳ-hoa-kỳ-300x214.png" style="width: 50%;height: 50%"></div>
-              <div class="exchange-rage rank"><img src="../images/flags/vietnam-flag-xs.png" style="width: 50%;height: 50%"></div>
+              <div class="exchange-rage-title rank"><img src="../images/flags/america.png" style="width: 50%;height: 50%"></div>
             </li>
+            <%for(let currencyUnit of topCurrency){%>
+            <li>
+              <div class="flag-imgs rank"><img src="<%=currencyUnit.QuocKi%>" style="width: 100%;height: 100%"></div>
+              <div class="name-currency rank"><%=currencyUnit.TenDonVi%> </div>
+              <div class="exchange-rage rank"><%=currencyUnit.TiLe%> USD</div>
+            </li>
+            <%}%>
           </ul>
         </div>
       </nav>
@@ -131,12 +137,6 @@
   </div>
 </section>
 <script type="text/javascript">
-  // $.ajax({
-  //   url: '/api/getTopCurrency',
-  //   method: 'get',
-  //   success: function (result) {
-  //   }
-  // })
 </script>
 </body>
 </html>
