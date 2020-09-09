@@ -15,7 +15,7 @@ nav .rankings{
     height: 500px;
     border: 3px solid #9fdae5;
     width: 100%;
-    background-color: rgba(162, 229, 239, 0.55);
+    background-color: rgba(250, 244, 244, 0.62);
 }
 
 nav .rankings ul{
@@ -40,12 +40,12 @@ nav .rankings ul .wrap-title-rank{
 }
 
 nav .rankings ul li .title-rank{
-    width: 50%;
+    width: 56%;
     padding-left: 10px;
 }
 
 nav .rankings .title_rankings{
-    line-height: 50px !important;
+    line-height: 30px !important;
     border-bottom: 2px dashed #9fdae5;
     background-color: #9fdae5;
 }
@@ -55,9 +55,9 @@ nav .rankings ul li .rank{
     font-size: 0.8em;
 }
 
-nav .rankings ul li .number-rank{
-    width: 7%;
-}
+/*nav .rankings ul li .number-rank{*/
+/*    width: 7%;*/
+/*}*/
 
 nav .rankings ul li .flag-imgs{
     width: 10%;
@@ -73,7 +73,7 @@ nav .rankings ul li .flag-imgs img{
 }
 
 nav .rankings ul li .name-currency{
-    width: 40%;
+    width: 52%;
     padding-left: 5px;
     text-align: left;
 }
@@ -86,9 +86,9 @@ nav .rankings img{
 }
 
 nav .rankings ul li .exchange-rage{
-    width: 44%;
+    width: 35%;
     text-align: right;
-    padding: 0 13px 0 0;
+    padding: 0 5px 0 0;
 }
 
 nav .rankings ul li .exchange-rage-title{
