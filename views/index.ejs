@@ -117,7 +117,7 @@
 
       <nav class="col-md-4 col-sm-12">
         <div class="rankings">
-          <div class="title_rankings text-center col-md-12"><h4>Top 10 Highest currencies<br>(USA)</h4></div>
+          <div class="title_rankings text-center col-md-12"><h4>Top Highest currentcies<br>(USA)</h4></div>
           <ul>
             <li class="wrap-title-rank">
               <div class="text-left title-rank rank">Name</div>
@@ -126,7 +126,7 @@
             <%for(let currencyUnit of topCurrency){%>
             <li>
               <div class="flag-imgs rank"><img src="<%=currencyUnit.QuocKi%>" style="width: 100%;height: 100%"></div>
-              <div class="name-currency rank"><%=currencyUnit.TenDonVi%> </div>
+              <div class="name-currency rank"><%=currencyUnit.TenDonVi%> (<%=currencyUnit.KiHieu%>)</div>
               <div class="exchange-rage rank"><%=currencyUnit.TiLe%> USD</div>
             </li>
             <%}%>
