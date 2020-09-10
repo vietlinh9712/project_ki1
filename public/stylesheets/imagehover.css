@@ -13,7 +13,7 @@
     display: inline-block;
     margin: 0;
     max-width: 100%;
-    background-color: rgba(255,255,255,0.25);
+    background-color: rgb(246, 245, 245);
     color: #fff;
     overflow: hidden;
     -webkit-backface-visibility: hidden;
@@ -29,7 +29,7 @@
 }
 
 [class^='imghvr-'] figcaption, [class*=' imghvr-'] figcaption {
-    background-color: rgba(0, 167, 255,0.25);
+    background-color: rgba(255, 255, 255, 0.25);
     padding: 30px;
     position: absolute;
     top: 0;
@@ -435,11 +435,20 @@
             backface-visibility: hidden;
 }
 
+[class^='imghvr-flip-'] p, [class*=' imghvr-flip-'] p {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
 [class^='imghvr-flip-'] figcaption, [class*=' imghvr-flip-'] figcaption {
     opacity: 0;
 }
 
-[class^='imghvr-flip-']:hover > img, [class*=' imghvr-flip-']:hover > img {
+[class^='imghvr-flip-']:hover > img , [class*=' imghvr-flip-']:hover > img{
+    opacity: 0;
+}
+
+[class^='imghvr-flip-']:hover > p , [class*=' imghvr-flip-']:hover > p{
     opacity: 0;
 }
 
@@ -461,6 +470,7 @@
     -webkit-transform: rotateX(-180deg);
             transform: rotateX(-180deg);
 }
+
 
 .imghvr-flip-horiz:hover figcaption {
     -webkit-transform: rotateX(0deg);
@@ -754,7 +764,7 @@
 
 [class^='imghvr-fold']:hover > img, [class*=' imghvr-fold']:hover > img {
     opacity: 0;
-    transition-delay: 0;
+    transition-delay: 0s;
 }
 
 [class^='imghvr-fold']:hover figcaption, [class*=' imghvr-fold']:hover figcaption {
@@ -1044,7 +1054,7 @@
     -webkit-transform: rotateX(-100deg) translateY(50%) scale(0.5);
             transform: rotateX(-100deg) translateY(50%) scale(0.5);
     opacity: 0;
-    transition-delay: 0;
+    transition-delay: 0s;
 }
 
 .imghvr-zoom-out-flip-horiz:hover figcaption, .imghvr-zoom-out-flip-horiz.hover figcaption {
@@ -1071,7 +1081,7 @@
     -webkit-transform: rotateY(-100deg) translateX(50%) scale(0.5);
             transform: rotateY(-100deg) translateX(50%) scale(0.5);
     opacity: 0;
-    transition-delay: 0;
+    transition-delay: 0s;
 }
 
 .imghvr-zoom-out-flip-vert:hover figcaption, .imghvr-zoom-out-flip-vert.hover figcaption {

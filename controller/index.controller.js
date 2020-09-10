@@ -1,5 +1,12 @@
 let models = require('../models/index.models')
 
+module.exports.getIndex =async function(req,res){
+    let topCurrency = await models.getTopCurrency();
+    res.render('index',{
+        topCurrency: topCurrency
+    })
+}
+
 module.exports.displayPageConversion =async function (req,res,next) {
     let key = req.params.unit;
     let dataFromDatabase = await models.getMeasureByType(key);

@@ -32,5 +32,6 @@ module.exports.getConversionRate = async function (name) {
 module.exports.getTopCurrency = async function () {
     const pool = await sql.connect(config);
     let result = await pool.request()
-        .execute('get_conversion_rate');
+        .execute('T2004E_NhomViet_getTopCurrency');
+    return result.recordset;
 }

@@ -14,8 +14,8 @@ const config = {
 module.exports.search = async function (keyword) {
     const pool = await sql.connect(config);
     let result = await pool.request()
-        .input('keyword',sql.NVarChar,'%'+keyword + '%')
-        .execute('search_name_measure');
+        .input('keywords',sql.NVarChar,'%'+keyword+'%')
+        .execute('T2004E_NhomViet_search_name_measure');
     if (result.recordset) return result.recordset ;
     else return [];
 }

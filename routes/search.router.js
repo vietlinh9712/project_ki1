@@ -3,7 +3,11 @@ var router = express.Router();
 
 const controller = require('../controller/search.controller')
 
-router.get('/:key',controller.getSearch);
+router.get('/',controller.getSearch);
+
+router.get('/:key',function (req,res) {
+    console.log(req.params.key);
+})
 
 router.post('/',controller.postSearch);
 

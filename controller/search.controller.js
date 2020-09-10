@@ -4,19 +4,30 @@ module.exports.getSearch = function (req,res) {
 }
 
 module.exports.postSearch =async function (req,res) {
-    let name_measure = [];
+    let measureResultSearch = [];
     let keyword = req.body.keyword;
     let resultOfSearch = await models.search(keyword);
-    if (resultOfSearch.length > 1){// just send name of measure
+    if (resultOfSearch.length > 1){//process err map not function
         await resultOfSearch.map((e) => {
-            name_measure.push({name : e.TenDonVi});
+            measureResultSearch.push(
+                {
+                    name : e.TenDonVi,
+                    type: e.TenDanhMuc,
+                    symbol: e.KiHieu
+                });
         })
     }else if (resultOfSearch.length === 1){// check result
-        let TenDonVi = await resultOfSearch[0].TenDonVi;
-        name_measure.push({name: TenDonVi})
+        let aMeasure = await resultOfSearch[0];
+        measureResultSearch.push(
+            {
+                name : aMeasure.TenDonVi,
+                type: aMeasure.TenDanhMuc,
+                symbol: aMeasure.KiHieu
+            }
+        )
     }
-    if (name_measure.length){
-        res.send(name_measure)
+    if (measureResultSearch.length){
+        res.send(measureResultSearch)
     }else {
         res.send([]);
     }
