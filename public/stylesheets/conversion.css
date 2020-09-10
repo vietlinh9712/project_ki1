@@ -67,7 +67,7 @@ img{
 .listunit ul li{
     font-size: 15px;
     float: right;
-    text-align: center;
+    text-align: left;
     list-style: none;
 }
 .listunit .unit{
