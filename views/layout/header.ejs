@@ -1,40 +1,99 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-    <div class="container">
-        <div class="row">
-            <a href="#" class="navbar-brand">
-                <i class="fab fa-react" style="color: #00B7FF;font-size: 50px"></i>
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarReponsive">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
-        <div class="collapse navbar-collapse row" ID="navbarReponsive">
+<!--<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">-->
+<!--    <div class="container">-->
+<!--        <a href="#" class="navbar-brand">-->
+<!--            <i class="fab fa-react" style="color: #00B7FF;font-size: 50px"></i>-->
+<!--        </a>-->
+<!--        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarReponsive">-->
+<!--            <span class="navbar-toggler-icon"></span>-->
+<!--        </button>-->
+<!--        <div class="collapse navbar-collapse" ID="navbarReponsive">-->
+<!--            <ul class="navbar-nav ml-auto">-->
+<!--                <li class="nav-item">-->
+<!--                   <a class="nav-link active" href="/"><i class="fas fa-home"></i>  Home</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" href="/length"><i class="fas fa-ruler-horizontal"></i>  Length</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" href="#"><i class="fas fa-globe-africa"></i>  Area</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" href="#"><i class="fas fa-volume-up"></i>  Volume</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" href="#"><i class="fab fa-acquisitions-incorporated"></i>  Mass</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" href="#"><i class="fas fa-temperature-high"></i>  Temperature</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" href="#"><i class="fas fa-coins"></i>  Currency</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" href="#"><i class="fas fa-book"></i>  History</a>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</nav>-->
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <i class="fab fa-react" style="color: #00B7FF;font-size: 50px"></i>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                   <a class="nav-link active" href="/"><i class="fas fa-home"></i>  Home</a>
+                    <a class="nav-link active" href="/"><i class="fas fa-home"></i>  Home</a>
+                </li>
+                <li class="nav-item" ID="dropdown1">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-sync-alt"></i> Convert</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                        <a class="nav-link" href="/length"><i class="fas fa-ruler-horizontal"></i>  Length</a>
+                        <a class="nav-link" href="/Area"><i class="fas fa-globe-africa"></i>  Area</a>
+                        <a class="nav-link" href="/Volume"><i class="fas fa-cube"></i>  Volume</a>
+                        <a class="nav-link" href="/Mass"><i class="fab fa-acquisitions-incorporated"></i>  Mass</a>
+                        <a class="nav-link" href="/Temperature"><i class="fas fa-temperature-high"></i>  Temperature</a>
+                        <a class="nav-link" href="/Currency"><i class="fas fa-coins"></i> Currency</a>
+                    </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/length"><i class="fas fa-ruler-horizontal"></i>  Length</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-globe-africa"></i>  Area</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-volume-up"></i>  Volume</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fab fa-acquisitions-incorporated"></i>  Mass</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-temperature-high"></i>  Temperature</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-coins"></i>  Currency</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-book"></i>  History</a>
+                    <a class="nav-link active" href="#"><i class="fas fa-book"></i> History</a>
+
                 </li>
             </ul>
         </div>
     </div>
+    <script type="text/javascript">
+        const $dropdown = $("#dropdown1");
+        const $dropdownToggle = $(".dropdown-toggle");
+        const $dropdownMenu = $(".dropdown-menu");
+        const showClass = "show";
+
+        $(window).on("load resize", function() {
+            if (this.matchMedia("(min-width: 768px)").matches) {
+                $dropdown.hover(
+                    function() {
+                        const $this = $(this);
+                        $this.addClass(showClass);
+                        $this.find($dropdownToggle).attr("aria-expanded", "true");
+                        $this.find($dropdownMenu).addClass(showClass);
+                    },
+                    function() {
+                        const $this = $(this);
+                        $this.removeClass(showClass);
+                        $this.find($dropdownToggle).attr("aria-expanded", "false");
+                        $this.find($dropdownMenu).removeClass(showClass);
+                    },
+                );
+            } else {
+                $dropdown.off("mouseenter mouseleave");
+            }
+        });
+    </script>
 </nav>
+

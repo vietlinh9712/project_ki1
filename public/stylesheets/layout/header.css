@@ -8,13 +8,16 @@ body{
 }
 .navbar{
     background-color: #4972b1 !important;
+    padding-bottom: 0;
 }
 .navbar li a{
-    color: white !important;
+    color: white;
     font-size: 20px;
-    padding: 0;
     font-family: 'Londrina Solid', cursive !important;
     margin-left: 10px;
+}
+.navbar-dark .navbar-nav .nav-link{
+    color: white;
 }
 .navbar li a:hover{
     color: #534c4c !important;
@@ -30,4 +33,45 @@ body{
 .small-title{
     text-align: center;
     font-style: italic;
+}
+
+
+.navbar .nav-item:not(:last-child) {
+    margin-right: 35px;
+}
+
+.dropdown-toggle::after {
+    transition: transform 0.15s linear;
+}
+
+.show.dropdown .dropdown-toggle::after {
+    transform: translateY(3px);
+}
+.dropdown-menu {
+    margin-top: 0;
+}
+.dropdown-menu > a{
+    width: 95%;
+    color: black !important;
+}
+.dropdown-menu a:hover{
+    background-color: #f5f5f5;
+}
+@media (min-width: 768px){
+    .navbar-expand-md .navbar-nav .dropdown-menu {
+        width: 250px;
+        position: absolute;
+        left: calc(100% - 300px);
+        top: 78px;
+    }
+    .navbar li a{
+        padding: 20px 0;
+    }
+    .dropdown-menu a{
+        padding: 5px !important;
+        width: 95%;
+    }
+    .dropdown-menu a:hover{
+        background-color: #f5f5f5;
+    }
 }
