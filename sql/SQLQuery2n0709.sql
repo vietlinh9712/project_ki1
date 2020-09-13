@@ -6,11 +6,8 @@
 		  ('Temperature'),
 		  ('Currency')
 
-INSERT INTO T2004E_NhomViet_QuocGia(TenQuocGia,QuocKi)
-	VALUES('Romania','../images/flags/2000px-Flag_of_Romania.svg_-300x200.png'),
-		  ('Switzerland','../images/flags/3857101_640px-300x200.jpg'),
-		  ('Russian','../images/flags/2096155911-300x201.jpg'),
-		  ('America','../images/flags/quốc-kỳ-hoa-kỳ-300x214.png')
+INSERT INTO T2004E_NhomViet_QuocGia(TenQuocGia,QuocKi,DonViID)
+	VALUES('Euro','../images/flags/eu-flag.gif','123')
 
 INSERT INTO T2004E_NhomViet_DonVi(TenDonVi,KiHieu,DoPhoBien,DanhMucID,QuocGia)
 	VALUES('Inches','in',2,1,NULL),
