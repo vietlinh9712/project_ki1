@@ -17,9 +17,11 @@ module.exports.displayPageConversion =async function (req,res,next) {
             unitTo: 36
         })
     }else {
+        let dataTopUnit = await models.getTopUnit_1(key);
         let dataFromDatabase = await models.getMeasureByType(key);
         res.render('conversion',{
-            data: dataFromDatabase
+            data: dataFromDatabase,
+            dataunit: dataTopUnit
         })
     }
 }
