@@ -2,7 +2,7 @@ let conversionRateFromDatabase = [];
 let url = document.location.pathname;
 let key = url.replace('/','');
 let allInputField = $('.conversion-unit');
-if (key.toLowerCase() === 'temperature'){//
+if (key.toLowerCase() === 'temperature'){
     allInputField.bind('input',function () {
         let userInput = $(this);
         if(userInput.attr('id') === 'celsius'){
