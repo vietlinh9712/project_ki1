@@ -9,10 +9,19 @@ module.exports.getIndex =async function(req,res){
 
 module.exports.displayPageConversion =async function (req,res,next) {
     let key = req.params.unit;
-    let dataFromDatabase = await models.getMeasureByType(key);
-    res.render('conversion',{
-        data: dataFromDatabase
-    })
+    if (key.toLowerCase() === 'currency' ){
+        let currencyData = await models.getCurrency();
+        res.render('currency',{
+            data : currencyData,
+            unitFrom: 34,
+            unitTo: 36
+        })
+    }else {
+        let dataFromDatabase = await models.getMeasureByType(key);
+        res.render('conversion',{
+            data: dataFromDatabase
+        })
+    }
 }
 
 module.exports.getConversionRate = async function(req,res,next){

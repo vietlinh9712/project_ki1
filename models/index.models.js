@@ -35,3 +35,10 @@ module.exports.getTopCurrency = async function () {
         .execute('T2004E_NhomViet_getTopCurrency');
     return result.recordset;
 }
+
+module.exports.getCurrency = async function () {
+    const pool = await sql.connect(config);
+    let result = await pool.request()
+        .execute('getCurrency');
+    return result.recordset;
+}

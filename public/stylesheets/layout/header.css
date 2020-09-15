@@ -7,7 +7,7 @@ body{
     width: 100%;
 }
 .navbar{
-    background-color: #4972b1 !important;
+    background-color: rgb(10, 20, 110) !important;
 }
 .navbar li a{
     color: white !important;

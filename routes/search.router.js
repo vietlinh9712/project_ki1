@@ -9,6 +9,8 @@ router.get('/:key',function (req,res) {
     console.log(req.params.key);
 })
 
+router.post('/Currency',controller.searchCurrency)
+
 router.post('/',controller.postSearch);
 
 module.exports = router;

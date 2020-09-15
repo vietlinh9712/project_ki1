@@ -32,3 +32,9 @@ module.exports.postSearch =async function (req,res) {
         res.send([]);
     }
 }
+
+module.exports.searchCurrency = async function (req,res) {
+    let key = req.body.key;
+    let result = await models.searchCurrency(key);
+    res.send(result);
+}
