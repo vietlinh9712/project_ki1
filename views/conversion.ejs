@@ -66,25 +66,22 @@
     </div>
 </div>
 
-<div class="length-body">
+    <div class="length-body">
             <div class="listunit col-md-12">
-                <div class="row">
-                    <ul class="col-md-12">
                         <%for(let i=0;i<dataunit.length && i<4;i++){ %>
-                        <li class="col-md-3">
-                            <div class="unit"><%=dataunit[i].TenDonVi%></div>
-                            <div class="decripton"><%=dataunit[i].MoTa%>
-                                <a href="#">Show more...</a></div>
-                        </li>
+                                <div class="container">
+                                    <div class="unit">
+                                        <%=dataunit[i].TenDonVi%>
+                                    </div>
+                                    <div class="decription">
+                                        <%=dataunit[i].MoTa%><a href="#"> Show more...</a>
+                                    </div>
+                                </div>
                         <%}%>
-                    </ul>
-                </div>
             </div>
+    </div>
 
-    <div class="length-foot">
-        <a href="#">See More...</a>
-    </div>
-    </div>
+
 
 <script type="text/javascript">
     $('.autoScroll').bind('click',() => {

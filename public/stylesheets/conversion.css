@@ -71,7 +71,7 @@ img{
     list-style: none;
 }
 .listunit .unit{
-    font-size: 35px;
+    font-size: 50px;
 }
 .ruler{
     background-color: #333;
@@ -156,14 +156,11 @@ img{
 .input-unit a:hover{
     text-decoration: none;
 }
-.length-body{
-    background-color: #e5f3f7 !important;
-}
+
 .length-foot{
     font-size: 50px;
     text-align: center;
     padding-top: 3%;
-    background-color: #e5f3f7 !important;
 }
 .length-foot a{
     color: #000000;
@@ -174,4 +171,10 @@ img{
 }
 .listunit{
     padding-top: 5%;
+    display: flex;
+    background-color: #e5f3f7 !important;
+    float: left;
+    padding-bottom: 5%;
 }
+
+
