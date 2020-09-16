@@ -70,21 +70,13 @@
             <div class="listunit col-md-12">
                 <div class="row">
                     <ul class="col-md-12">
-                        <li class="col-md-4">
-                            <div class="unit"><%=data[0].TenDonVi%></div>
-                            <div class="decripton"><%=dataunit[0].MoTa%>
+                        <%for(let i=0;i<dataunit.length && i<4;i++){ %>
+                        <li class="col-md-3">
+                            <div class="unit"><%=dataunit[i].TenDonVi%></div>
+                            <div class="decripton"><%=dataunit[i].MoTa%>
                                 <a href="#">Show more...</a></div>
                         </li>
-                        <li class="col-md-4">
-                            <div class="unit"><%=data[1].TenDonVi%></div>
-                            <div class="decripton"><%=dataunit[1].MoTa%>
-                                <a href="#">Show more...</a></div>
-                        </li>
-                        <li class="col-md-4">
-                            <div class="unit"><%=data[2].TenDonVi%></div>
-                            <div class="decripton"><%=dataunit[2].MoTa%>
-                                <a href="#">Show more...</a></div>
-                        </li>
+                        <%}%>
                     </ul>
                 </div>
             </div>

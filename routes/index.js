@@ -10,8 +10,9 @@ router.get('/:unit',controller.displayPageConversion);
 
 router.post('/api/getRate',controller.getConversionRate);
 
-router.get('/api/getTopCurrency',controller.getTopCurrency)
+router.get('/api/getTopCurrency',controller.getTopCurrency);
 
+router.get('/aboutus',controller.getAboutUs)
 
 module.exports = router;
 

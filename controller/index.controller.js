@@ -35,3 +35,7 @@ module.exports.getConversionRate = async function(req,res,next){
 module.exports.getTopCurrency = function (req,res) {
 
 }
+
+module.exports.getAboutUs = function (req,res) {
+    res.render('aboutus')
+}
