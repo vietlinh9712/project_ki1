@@ -70,9 +70,7 @@ img{
     text-align: left;
     list-style: none;
 }
-.listunit .unit{
-    font-size: 50px;
-}
+
 .ruler{
     background-color: #333;
 }
@@ -157,14 +155,6 @@ img{
     text-decoration: none;
 }
 
-.length-foot{
-    font-size: 50px;
-    text-align: center;
-    padding-top: 3%;
-}
-.length-foot a{
-    color: #000000;
-}
 .length-foot a:hover{
     color: #5a6268;
     text-decoration: none;
@@ -176,5 +166,7 @@ img{
     float: left;
     padding-bottom: 5%;
 }
-
+.listunit .unit{
+    font-size: 35px;
+}
 
