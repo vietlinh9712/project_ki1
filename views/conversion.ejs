@@ -4,6 +4,7 @@
     <%-include('layout/head')%>
     <link rel="stylesheet" type="text/css" href="./stylesheets/conversion.css">
     <link rel="stylesheet" type="text/css" href="./stylesheets/layout/nav-slider.css">
+    <link rel="stylesheet" type="text/css" href="./stylesheets/layout/footer.css">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Pacifico&family=Ubuntu+Condensed&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
@@ -67,21 +68,21 @@
 </div>
 
     <div class="length-body">
-            <div class="listunit col-lg-12">
-                        <%for(let i=0;i<dataunit.length && i<4;i++){ %>
-                                <div class="container">
-                                    <div class="unit">
-                                        <%=dataunit[i].TenDonVi%>
-                                    </div>
-                                    <div class="decription">
-                                        <%=dataunit[i].MoTa%><a href="#"> Show more...</a>
-                                    </div>
-                                </div>
-                        <%}%>
-            </div>
+        <div class="listunit col-lg-12">
+            <%for(let i=0;i<dataunit.length && i<4;i++){ %>
+                <div class="container">
+                    <div class="unit">
+                        <%=dataunit[i].TenDonVi%>
+                    </div>
+                    <div class="decription">
+                        <%=dataunit[i].MoTa%><a href="#"> Show more...</a>
+                    </div>
+                </div>
+            <%}%>
+        </div>
     </div>
 
-
+<%-include('layout/footer')%>
 
 <script type="text/javascript">
     $('.autoScroll').bind('click',() => {
