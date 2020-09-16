@@ -19,13 +19,13 @@
             <div class="col-md-12" >
                 <div class="input-unit input-unit-1 col-md-12">
                     <div class="label">
-                        <a href="#">Common <%=data[0].TenDanhMuc%> Units</a>
+                        <a href="#" style="text-transform: uppercase;font-weight:700;">Common <%=data[0].TenDanhMuc%> Units</a>
                     </div>
                     <form class="form-group">
                         <%for(let unit of data){%>
                         <%if (unit.DoPhoBien == 1){%>
                         <div class="col-md-4 input-field">
-                            <label><%=unit.TenDonVi%>(<%=unit.KiHieu%>)</label>
+                            <label style="font-weight: 500;"><%=unit.TenDonVi%>(<%=unit.KiHieu%>)</label>
                             <input id="<%=unit.TenDonVi%>" class="form-control conversion-unit" type="text" name="<%=unit.DonViID%>" >
                         </div>
                         <%}}%>
@@ -39,13 +39,13 @@
                 <div class="col-md-12" >
                     <div class="input-unit input-unit-2 col-md-12">
                         <div class="label">
-                            <a href="#">SI <%=data[0].TenDanhMuc%> Units</a>
+                            <a href="#" style="text-transform: uppercase;font-weight: 700;">SI <%=data[0].TenDanhMuc%> Units</a>
                         </div>
                         <form class="form-group">
                             <%for(let unit of data){%>
                             <%if (unit.DoPhoBien == 2 ){%>
                             <div class="col-md-4 input-field">
-                                <label><%=unit.TenDonVi%>(<%=unit.KiHieu%>)</label>
+                                <label style="font-weight: 600;"><%=unit.TenDonVi%>(<%=unit.KiHieu%>)</label>
                                 <input id="<%=unit.TenDonVi%>" class="form-control conversion-unit" type="text" name="<%=unit.DonViID%>" >
                             </div>
                             <%}}%>
