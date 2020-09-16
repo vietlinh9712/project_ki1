@@ -10,8 +10,6 @@ img{
     max-width: 100%;
 }
 
-.length-head{
-}
 
 .input-unit{
     width: 100%;
@@ -159,12 +157,12 @@ img{
     color: #5a6268;
     text-decoration: none;
 }
+
 .listunit{
     padding-top: 5%;
     display: flex;
-    background-color: #e5f3f7 !important;
-    float: left;
     padding-bottom: 5%;
+    background-color: #e5f3f7 !important;
 }
 .listunit .unit{
     font-size: 35px;
