@@ -1,0 +1,80 @@
+.body-table{
+    margin: 0 auto;
+}
+
+.col-table-title{
+    width: 20%;
+    border-top: none !important;
+    position: relative;
+    padding: 1.2rem 0.75rem 0.75rem 0.75rem !important;
+}
+
+.col-table-1{
+    width: 13%;
+    height: 85px;
+    border-top: none !important;
+    border-right: 1px solid rgb(205, 205, 205) !important;
+}
+
+.currency-comparison-table .wrap-img{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.currency-comparison-table .wrap-img-row{
+    width: 20%;
+    height: auto;
+    float: left;
+    padding-left: 5px;
+}
+
+.currency-comparison-table .wrap-img>img,.wrap-img-row >img{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+}
+
+.currency-comparison-table .title-currency{
+    color: rgb(0, 92, 239);
+    font-size: 2vw;
+}
+
+.col-table-title > img{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.currency-comparison-table .padding-top{
+    padding-top: 1.6rem !important;
+}
+
+.currency-comparison-table .title-currency-row{
+    float: left;
+    width: 80%;
+}
+
+.title-currency-compare{
+    font-size: 2vw;
+    padding: 12px 0;
+}
+
+.label-btn{
+    position: absolute;
+    top: 30%;
+    left: 10%;
+}
+
+.font-size-number{
+    font-size: 1.3vw;
+    word-break: break-all;
+}
+
+.currency-comparison-table .footer-compare-currency{
+    width: 100%;
+    height: 100px;
+    background-color: white;
+}

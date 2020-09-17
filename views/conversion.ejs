@@ -19,13 +19,13 @@
             <div class="col-md-12" >
                 <div class="input-unit input-unit-1 col-md-12">
                     <div class="label">
-                        <a href="#">Common <%=data[0].TenDanhMuc%> Units</a>
+                        <a href="#" style="text-transform: uppercase;font-weight: 700;">SI <%=data[0].TenDanhMuc%> Units</a>
                     </div>
                     <form class="form-group">
                         <%for(let unit of data){%>
                         <%if (unit.DoPhoBien == 1){%>
-                        <div class="col-md-4 input-field">
-                            <label><%=unit.TenDonVi%>(<%=unit.KiHieu%>)</label>
+                        <div class="col-lg-4 col-md-12 input-field">
+                            <label style="font-weight: 500;"><%=unit.TenDonVi%>(<%=unit.KiHieu%>)</label>
                             <input id="<%=unit.TenDonVi%>" class="form-control conversion-unit" type="text" name="<%=unit.DonViID%>" >
                         </div>
                         <%}}%>
@@ -37,15 +37,15 @@
         <%if (unit.DoPhoBien == 2 ){%>
             <div class="row">
                 <div class="col-md-12" >
-                    <div class="input-unit input-unit-2 col-md-12">
+                    <div class="input-unit input-unit-2 col-md-12 col-lg-12">
                         <div class="label">
-                            <a href="#">SI <%=data[0].TenDanhMuc%> Units</a>
+                            <a href="#" style="text-transform: uppercase;font-weight: 700;">SI <%=data[0].TenDanhMuc%> Units</a>
                         </div>
                         <form class="form-group">
                             <%for(let unit of data){%>
                             <%if (unit.DoPhoBien == 2 ){%>
-                            <div class="col-md-4 input-field">
-                                <label><%=unit.TenDonVi%>(<%=unit.KiHieu%>)</label>
+                            <div class="col-lg-4 col-md-12 input-field">
+                                <label style="font-weight: 500;"><%=unit.TenDonVi%>(<%=unit.KiHieu%>)</label>
                                 <input id="<%=unit.TenDonVi%>" class="form-control conversion-unit" type="text" name="<%=unit.DonViID%>" >
                             </div>
                             <%}}%>
@@ -67,20 +67,19 @@
     </div>
 </div>
 
-        <div class="listunit col-md-12">
-            <%for(let i=0;i<dataunit.length && i<4;i++){ %>
-                <div class="container">
-                    <div class="unit">
-                        <%=dataunit[i].TenDonVi%>
-                    </div>
-                    <div class="decription">
-                        <%=dataunit[i].MoTa%><a href="#"> Show more...</a>
-                    </div>
-                </div>
-            <%}%>
+<div class="listunit col-md-12">
+    <%for(let i=0;i<dataunit.length && i<4;i++){ %>
+    <div class="container">
+        <div class="unit">
+            <%=dataunit[i].TenDonVi%>
         </div>
+        <div class="decription">
+            <%=dataunit[i].MoTa%><a href="#"> Show more...</a>
+        </div>
+    </div>
+    <%}%>
+</div>
 <%-include('layout/footer')%>
-
 
 <script type="text/javascript">
     $('.autoScroll').bind('click',() => {

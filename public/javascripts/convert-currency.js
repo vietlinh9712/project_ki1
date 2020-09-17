@@ -6,6 +6,7 @@ function processClickSelectUnit() {
         let searchInput = $(wrapSelectUnit).children()[3];
         let wrapDropdown = $(wrapSelectUnit).children()[2];
         let Dropdown = $(wrapDropdown).children()[0];
+        $(searchInput).val('');
         $(Dropdown).css('display','block');
         $(currentUnitSelect).addClass('display-none');
         $($(wrapSelectUnit).children()[3]).select();
@@ -15,13 +16,13 @@ function processClickSelectUnit() {
     $('.select-unit').bind('focusout',async function () {
         let wrapSelectUnit = $(this).parents()[0];
         let searchInput = $(this);
-        let currentUnitSelect = $(wrapSelectUnit).children()[1];
+        let currentUnitSelect =    $(wrapSelectUnit).children()[1];
         let wrapDropdown = $(wrapSelectUnit).children()[2];
         let Dropdown = $(wrapDropdown).children()[0];
         $(Dropdown).css('display','block');
         $(currentUnitSelect).addClass('display-none');
         $($(wrapSelectUnit).children()[3]).val('');
-        displaySelectUnitToInput(Dropdown,currentUnitSelect,wrapDropdown);
+        displaySelectUnitToInput(Dropdown,currentUnitSelect,wrapDropdown,searchInput);
         searchUnitCurrency(wrapDropdown,searchInput);
     })
 }
@@ -32,7 +33,7 @@ function searchUnitCurrency(dropdownElement,searchInput) {
         timer = setTimeout(function () {
             let key = $(searchInput).val()
             $.ajax({
-                url: 'search/Currency/',
+                url: '/search/Currency',
                 data: {
                     key: key
                 },
@@ -58,7 +59,7 @@ function searchUnitCurrency(dropdownElement,searchInput) {
     })
 }
 
-function displaySelectUnitToInput(Dropdown,currentUnitSelect,dropdownElement) {
+function displaySelectUnitToInput(Dropdown,currentUnitSelect,dropdownElement,searchInput) {
     $(Dropdown).children().bind('click',function () {
         let unitSelect = $($($(this).children()[0]).children()[0]).children();
         let flagImg = $($(unitSelect).children()[0]).attr('src');
@@ -67,6 +68,7 @@ function displaySelectUnitToInput(Dropdown,currentUnitSelect,dropdownElement) {
         $($($(currentUnitSelect).children()[0]).children()[0]).attr('src',flagImg);//set src img to input box
         $($($(currentUnitSelect).children()[1]).children()[0]).text(symbolUnit);//set symbol div tag to input box
         $($($(currentUnitSelect).children()[2]).children()[0]).text(nameUnit);// set name div tag to input box
+        $(searchInput).val(symbolUnit);
         $(Dropdown).css('display','none');
         $(currentUnitSelect).removeClass('display-none');
         $.ajax({// reset dropdown unit before search
@@ -92,6 +94,34 @@ function displaySelectUnitToInput(Dropdown,currentUnitSelect,dropdownElement) {
                 })
             }
         })
+
     });
 }
+
+function clickInverseButton() {
+    let btnInverse = $('#inverseButton');
+    $(btnInverse).bind('click',function () {
+        let input1 = $('#from');
+        let input2 = $('#to');
+        let selectInput1 = $($('.wrap-input')[1]).children()[1];
+        let selectInput2 = $($('.wrap-input')[2]).children()[1];
+        let linkImgInput1 = $($($(selectInput1).children()[0]).children()[0]).attr('src');
+        let symbolInput1 = $($($(selectInput1).children()[1]).children()[0]).text();
+        let nameUnitInput1 = $($($(selectInput1).children()[2]).children()[0]).text();
+        let linkImgInput2 = $($($(selectInput2).children()[0]).children()[0]).attr('src');
+        let symbolInput2 = $($($(selectInput2).children()[1]).children()[0]).text();
+        let nameUnitInput2 = $($($(selectInput2).children()[2]).children()[0]).text();
+        let valueInput1 = $(input1).val();
+        let valueInput2 = $(input2).val();
+        $(input1).val(valueInput2);
+        $(input2).val(valueInput1);
+        $($($(selectInput2).children()[0]).children()[0]).attr('src',linkImgInput1);
+        $($($(selectInput2).children()[1]).children()[0]).text(symbolInput1);
+        $($($(selectInput2).children()[2]).children()[0]).text(nameUnitInput1);
+        $($($(selectInput1).children()[0]).children()[0]).attr('src',linkImgInput2);
+        $($($(selectInput1).children()[1]).children()[0]).text(symbolInput2);
+        $($($(selectInput1).children()[2]).children()[0]).text(nameUnitInput2);
+    })
+}
+clickInverseButton();
 
