@@ -125,7 +125,7 @@
             <%for(let currencyUnit of topCurrency){%>
             <li>
               <div class="flag-imgs rank"><img src="<%=currencyUnit.QuocKi%>" style="width: 100%;height: 100%"></div>
-              <div class="name-currency rank"><a href="#"><%=currencyUnit.TenDonVi%> (<%=currencyUnit.KiHieu%>)</a></div>
+              <div class="name-currency rank"><a href="/Currency/Convert?from=<%=currencyUnit.KiHieu%>"><%=currencyUnit.TenDonVi%> (<%=currencyUnit.KiHieu%>)</a></div>
               <div class="exchange-rage rank"><%=currencyUnit.TiLe%> USD</div>
             </li>
             <%}%>
