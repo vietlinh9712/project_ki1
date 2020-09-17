@@ -14,7 +14,7 @@
 <section class="input-convert">
     <div class="container">
         <div class="title text-left">
-            <h2><%=amount%> <%=data[unitFrom].KiHieu%> to <%=data[unitTo].KiHieu%> = <%=amount*(data[unitFrom].TiLe/data[unitTo].TiLe)%> <%=data[unitTo].KiHieu%></h2>
+            <h2><%=amount%> <%=data[unitFrom].KiHieu%> to <%=data[unitTo].KiHieu%> = <%=(amount*(data[unitFrom].TiLe/data[unitTo].TiLe)).toPrecision(12)%> <%=data[unitTo].KiHieu%></h2>
         </div>
         <div class="wrap">
             <div class="row">
@@ -120,7 +120,7 @@
                         <span class="number-input"><span id="user-input"><%=amount%></span> <span class="amount-unit"><%=data[unitFrom].KiHieu%>  = </span></span>
                     </div>
                     <div class="display-amount-text">
-                        <span class="number-result"><%=amount*(data[unitFrom].TiLe / data[unitTo].TiLe)%> <span class="amount-unit"> <%=data[unitTo].KiHieu%></span></span>
+                        <span class="number-result"><%=(amount*(data[unitFrom].TiLe / data[unitTo].TiLe)).toPrecision(12)%> <span class="amount-unit"> <%=data[unitTo].KiHieu%></span></span>
                     </div>
                 </div>
                 <div class="one-unit-conversion">

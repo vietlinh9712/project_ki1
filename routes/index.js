@@ -16,7 +16,7 @@ router.get('/api/getTopCurrency',controller.getTopCurrency);
 
 router.get('/api/getCurrency',controller.getCurrencyAPI);
 
-router.get('/aboutus',controller.getAboutUs)
+router.get('/page/aboutus',controller.getAboutUs)
 
 module.exports = router;
 

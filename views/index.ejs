@@ -94,7 +94,7 @@
           <div class="col-md-1"></div>
 
           <figure class="imghvr-flip-horiz home-boxes col-lg-3 col-md-6" style="display: flex;align-items: center;justify-content: center;">
-            <img src="./images/icon/clock.png" alt="clock.png">
+            <img src="./images/icon/stopwatch.png" alt="clock.png">
             <p>TIME</p>
             <figcaption>
               Date and time conversions, second, millisecond, minute, hour, day, week, month, year, century
@@ -125,7 +125,7 @@
             <%for(let currencyUnit of topCurrency){%>
             <li>
               <div class="flag-imgs rank"><img src="<%=currencyUnit.QuocKi%>" style="width: 100%;height: 100%"></div>
-              <div class="name-currency rank"><a href="#"><%=currencyUnit.TenDonVi%> (<%=currencyUnit.KiHieu%>)</a></div>
+              <div class="name-currency rank"><a href="/Currency/Convert?from=<%=currencyUnit.KiHieu%>"><%=currencyUnit.TenDonVi%> (<%=currencyUnit.KiHieu%>)</a></div>
               <div class="exchange-rage rank"><%=currencyUnit.TiLe%> USD</div>
             </li>
             <%}%>
