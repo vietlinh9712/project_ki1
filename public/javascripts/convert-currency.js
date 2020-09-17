@@ -99,8 +99,28 @@ function displaySelectUnitToInput(Dropdown,currentUnitSelect,dropdownElement,sea
 }
 
 function clickInverseButton() {
-    $('#inverseButton').bind('click',function () {
-        console.log($('#from-convert'))
+    let btnInverse = $('#inverseButton');
+    $(btnInverse).bind('click',function () {
+        let input1 = $('#from');
+        let input2 = $('#to');
+        let selectInput1 = $($('.wrap-input')[1]).children()[1];
+        let selectInput2 = $($('.wrap-input')[2]).children()[1];
+        let linkImgInput1 = $($($(selectInput1).children()[0]).children()[0]).attr('src');
+        let symbolInput1 = $($($(selectInput1).children()[1]).children()[0]).text();
+        let nameUnitInput1 = $($($(selectInput1).children()[2]).children()[0]).text();
+        let linkImgInput2 = $($($(selectInput2).children()[0]).children()[0]).attr('src');
+        let symbolInput2 = $($($(selectInput2).children()[1]).children()[0]).text();
+        let nameUnitInput2 = $($($(selectInput2).children()[2]).children()[0]).text();
+        let valueInput1 = $(input1).val();
+        let valueInput2 = $(input2).val();
+        $(input1).val(valueInput2);
+        $(input2).val(valueInput1);
+        $($($(selectInput2).children()[0]).children()[0]).attr('src',linkImgInput1);
+        $($($(selectInput2).children()[1]).children()[0]).text(symbolInput1);
+        $($($(selectInput2).children()[2]).children()[0]).text(nameUnitInput1);
+        $($($(selectInput1).children()[0]).children()[0]).attr('src',linkImgInput2);
+        $($($(selectInput1).children()[1]).children()[0]).text(symbolInput2);
+        $($($(selectInput1).children()[2]).children()[0]).text(nameUnitInput2);
     })
 }
 clickInverseButton();

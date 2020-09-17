@@ -39,7 +39,7 @@
 
 .currency-comparison-table .title-currency{
     color: rgb(0, 92, 239);
-    font-size: 2.25vw;
+    font-size: 2vw;
 }
 
 .col-table-title > img{
@@ -58,7 +58,7 @@
 }
 
 .title-currency-compare{
-    font-size: 3em;
+    font-size: 2vw;
     padding: 12px 0;
 }
 
@@ -69,7 +69,7 @@
 }
 
 .font-size-number{
-    font-size: 1.5vw;
+    font-size: 1.3vw;
     word-break: break-all;
 }
 

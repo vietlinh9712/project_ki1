@@ -31,7 +31,6 @@ $(btnToggle).bind('change',async function () {
     let unitHeadTable = $(headTableCompareCurrency).children();
     let unitBodyTable = $(bodyTableCompareCurrency).children();
     let titleCol = $('.col-table-title')
-    console.log(rowCurrency);
     if ($('#toggle-event').prop('checked')){
         for (let i =1 ;i < unitHeadTable.length ; i++){
             let unitSymbol = $($(unitHeadTable[i]).children()[1]).text();
@@ -61,7 +60,7 @@ $(btnToggle).bind('change',async function () {
             for (let j =1 ; j < unitHeadTable.length ; j++){
                 let rowsUnit = $('.body-table').children()[i];
                 colCurrency[j-1] = rowCurrency[j-1]
-                $($($(rowsUnit).children()[j]).children()[0]).text((colCurrency[j-1].TiLe/rowCurrency[i-1].TiLe).toPrecision(8))
+                $($($(rowsUnit).children()[j]).children()[0]).text((colCurrency[j-1].TiLe/rowCurrency[i-1].TiLe).toPrecision(6))
             }
         }
     }
