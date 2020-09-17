@@ -60,3 +60,7 @@ module.exports.getCurrencyAPI = async function (req,res) {
     let currencyData = await models.getCurrency();
     res.send(currencyData);
 }
+
+module.exports.getAboutUs = function (req,res) {
+    res.render('aboutus')
+}

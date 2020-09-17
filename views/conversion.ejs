@@ -4,6 +4,7 @@
     <%-include('layout/head')%>
     <link rel="stylesheet" type="text/css" href="./stylesheets/conversion.css">
     <link rel="stylesheet" type="text/css" href="./stylesheets/layout/nav-slider.css">
+    <link rel="stylesheet" type="text/css" href="./stylesheets/layout/footer.css">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Pacifico&family=Ubuntu+Condensed&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
@@ -16,15 +17,15 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12" >
-                <div class="input-unit input-unit-1 col-md-12 col-lg-12">
+                <div class="input-unit input-unit-1 col-md-12">
                     <div class="label">
-                        <a href="#">Common <%=data[0].TenDanhMuc%> Units</a>
+                        <a href="#" style="text-transform: uppercase;font-weight: 700;">SI <%=data[0].TenDanhMuc%> Units</a>
                     </div>
                     <form class="form-group">
                         <%for(let unit of data){%>
                         <%if (unit.DoPhoBien == 1){%>
                         <div class="col-lg-4 col-md-12 input-field">
-                            <label><%=unit.TenDonVi%>(<%=unit.KiHieu%>)</label>
+                            <label style="font-weight: 500;"><%=unit.TenDonVi%>(<%=unit.KiHieu%>)</label>
                             <input id="<%=unit.TenDonVi%>" class="form-control conversion-unit" type="text" name="<%=unit.DonViID%>" >
                         </div>
                         <%}}%>
@@ -38,13 +39,13 @@
                 <div class="col-md-12" >
                     <div class="input-unit input-unit-2 col-md-12 col-lg-12">
                         <div class="label">
-                            <a href="#">SI <%=data[0].TenDanhMuc%> Units</a>
+                            <a href="#" style="text-transform: uppercase;font-weight: 700;">SI <%=data[0].TenDanhMuc%> Units</a>
                         </div>
                         <form class="form-group">
                             <%for(let unit of data){%>
                             <%if (unit.DoPhoBien == 2 ){%>
                             <div class="col-lg-4 col-md-12 input-field">
-                                <label><%=unit.TenDonVi%>(<%=unit.KiHieu%>)</label>
+                                <label style="font-weight: 500;"><%=unit.TenDonVi%>(<%=unit.KiHieu%>)</label>
                                 <input id="<%=unit.TenDonVi%>" class="form-control conversion-unit" type="text" name="<%=unit.DonViID%>" >
                             </div>
                             <%}}%>
@@ -66,35 +67,24 @@
     </div>
 </div>
 
-<div class="length-body">
-            <div class="listunit col-md-12">
-                <div class="row">
-                    <ul class="col-md-12">
-                        <li class="col-md-4">
-                            <div class="unit"><%=data[0].TenDonVi%></div>
-                            <div class="decripton"><%=dataunit[0].MoTa%>
-                                <a href="#">Show more...</a></div>
-                        </li>
-                        <li class="col-md-4">
-                            <div class="unit"><%=data[1].TenDonVi%></div>
-                            <div class="decripton"><%=dataunit[1].MoTa%>
-                                <a href="#">Show more...</a></div>
-                        </li>
-                        <li class="col-md-4">
-                            <div class="unit"><%=data[2].TenDonVi%></div>
-                            <div class="decripton"><%=dataunit[2].MoTa%>
-                                <a href="#">Show more...</a></div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-    <%-include('layout/footer')%>
+<div class="listunit col-md-12">
+    <%for(let i=0;i<dataunit.length && i<4;i++){ %>
+    <div class="container">
+        <div class="unit">
+            <%=dataunit[i].TenDonVi%>
+        </div>
+        <div class="decription">
+            <%=dataunit[i].MoTa%><a href="#"> Show more...</a>
+        </div>
+    </div>
+    <%}%>
+</div>
+<%-include('layout/footer')%>
 
 <script type="text/javascript">
     $('.autoScroll').bind('click',() => {
         console.log('click');
-        $('body,html').animate({scrollTop: 380  }, 500);
+        $('body,html').animate({scrollTop: 300  }, 500);
     });
 </script>
 <script type="text/javascript" src="./javascripts/conversion-data.js"></script>

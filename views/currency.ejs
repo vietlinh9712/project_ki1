@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <%-include('layout/head')%>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/layout/footer.css">
     <link type="text/css" rel="stylesheet" href="../stylesheets/currency.css">
     <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
@@ -144,8 +145,8 @@
                     </div>
                     <table class="table">
                         <thead>
-                            <th class="text-left col-left"><%=data[unitFrom].KiHieu%></th>
-                            <th class="text-left col-right"><%=data[unitTo].KiHieu%></th>
+                        <th class="text-left col-left"><%=data[unitFrom].KiHieu%></th>
+                        <th class="text-left col-right"><%=data[unitTo].KiHieu%></th>
                         </thead>
                         <tbody>
                         <%for(let i = 0; i <= 10 ; i++){let number = 1%>
@@ -161,10 +162,10 @@
                             if (i === 9)  number = 10000;
                             if (i === 10)  number = 50000;
                         %>
-                            <tr>
-                                <th class="text-left col-left set-text"><%=number%> <%=data[unitFrom].KiHieu%></th>
-                                <th class="text-left col-right set-text"><%=((data[unitFrom].TiLe / data[unitTo].TiLe)*number).toPrecision(12)%> <%=data[unitTo].KiHieu%> </th>
-                            </tr>
+                        <tr>
+                            <th class="text-left col-left set-text"><%=number%> <%=data[unitFrom].KiHieu%></th>
+                            <th class="text-left col-right set-text"><%=((data[unitFrom].TiLe / data[unitTo].TiLe)*number).toPrecision(12)%> <%=data[unitTo].KiHieu%> </th>
+                        </tr>
                         <%}%>
                         </tbody>
                     </table>
