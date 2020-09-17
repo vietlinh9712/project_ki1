@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body{
+    background-color: rgb(231, 244, 254)
+}
+
 .input-convert{
     background-color: rgb(19, 85, 158);
     background-image: linear-gradient(0deg, rgb(19, 85, 158) 30%, rgba(19, 85, 158, 0) 65%, rgba(19, 85, 158, 0) 0px, transparent), linear-gradient(-241deg, rgb(24, 32, 126) 6%, rgba(24, 32, 126, 0.8) 16%, rgba(255, 255, 255, 0) 57%, transparent), linear-gradient(18deg, rgb(3, 88, 161) 20%, rgb(32, 141, 186) 60%, rgb(113, 137, 178) 75%, rgb(10, 20, 110) 93%);
@@ -94,11 +98,15 @@
 
 .input-convert .wrap .form-group .name-option{
     position: absolute;
-    width: 100%;
-    height: auto;
     top: 35%;
     padding: 5px 0 10px 10px;
     color: rgb(0, 34, 114);
+    background: rgb(255, 255, 255);
+    box-sizing: border-box;
+    border: 0px;
+    border-radius: 10px;
+    height: 60px;
+    width: 96.5%;
 }
 
 .input-convert .wrap .form-group .name-option-1{
@@ -244,4 +252,8 @@
 
 .table-cal{
     margin: 30px auto;
+}
+
+.wrap-content .title-table{
+    margin-bottom: 30px;
 }

@@ -6,6 +6,7 @@ function processClickSelectUnit() {
         let searchInput = $(wrapSelectUnit).children()[3];
         let wrapDropdown = $(wrapSelectUnit).children()[2];
         let Dropdown = $(wrapDropdown).children()[0];
+        $(searchInput).val('');
         $(Dropdown).css('display','block');
         $(currentUnitSelect).addClass('display-none');
         $($(wrapSelectUnit).children()[3]).select();
@@ -15,13 +16,13 @@ function processClickSelectUnit() {
     $('.select-unit').bind('focusout',async function () {
         let wrapSelectUnit = $(this).parents()[0];
         let searchInput = $(this);
-        let currentUnitSelect = $(wrapSelectUnit).children()[1];
+        let currentUnitSelect =    $(wrapSelectUnit).children()[1];
         let wrapDropdown = $(wrapSelectUnit).children()[2];
         let Dropdown = $(wrapDropdown).children()[0];
         $(Dropdown).css('display','block');
         $(currentUnitSelect).addClass('display-none');
         $($(wrapSelectUnit).children()[3]).val('');
-        displaySelectUnitToInput(Dropdown,currentUnitSelect,wrapDropdown);
+        displaySelectUnitToInput(Dropdown,currentUnitSelect,wrapDropdown,searchInput);
         searchUnitCurrency(wrapDropdown,searchInput);
     })
 }
@@ -32,7 +33,7 @@ function searchUnitCurrency(dropdownElement,searchInput) {
         timer = setTimeout(function () {
             let key = $(searchInput).val()
             $.ajax({
-                url: 'search/Currency/',
+                url: '/search/Currency',
                 data: {
                     key: key
                 },
@@ -58,7 +59,7 @@ function searchUnitCurrency(dropdownElement,searchInput) {
     })
 }
 
-function displaySelectUnitToInput(Dropdown,currentUnitSelect,dropdownElement) {
+function displaySelectUnitToInput(Dropdown,currentUnitSelect,dropdownElement,searchInput) {
     $(Dropdown).children().bind('click',function () {
         let unitSelect = $($($(this).children()[0]).children()[0]).children();
         let flagImg = $($(unitSelect).children()[0]).attr('src');
@@ -67,6 +68,7 @@ function displaySelectUnitToInput(Dropdown,currentUnitSelect,dropdownElement) {
         $($($(currentUnitSelect).children()[0]).children()[0]).attr('src',flagImg);//set src img to input box
         $($($(currentUnitSelect).children()[1]).children()[0]).text(symbolUnit);//set symbol div tag to input box
         $($($(currentUnitSelect).children()[2]).children()[0]).text(nameUnit);// set name div tag to input box
+        $(searchInput).val(symbolUnit);
         $(Dropdown).css('display','none');
         $(currentUnitSelect).removeClass('display-none');
         $.ajax({// reset dropdown unit before search
@@ -92,6 +94,14 @@ function displaySelectUnitToInput(Dropdown,currentUnitSelect,dropdownElement) {
                 })
             }
         })
+
     });
 }
+
+function clickInverseButton() {
+    $('#inverseButton').bind('click',function () {
+        console.log($('#from-convert'))
+    })
+}
+clickInverseButton();
 

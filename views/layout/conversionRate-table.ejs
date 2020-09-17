@@ -1,0 +1,99 @@
+<section class="currency-comparison-table content">
+    <div class="container">
+        <div class="wrap-content">
+            <div style="padding: 0 20px">
+                <div class="title-currency-compare text-center">
+                    <span class="">Exchange rates</span>
+                </div>
+                <table class="table">
+                    <tbody class="body-table">
+                    <tr id="head-table">
+                        <th scope="col" class="col-table-title">
+                            <img src="../images/line/first-line.a04110167e93cd1ba56f7b6c590d23e0.png">
+                            <label class="label-btn">
+                                <span style="font-size: 1.3em; color: #002272;padding-right: 15px">Reverse</span>
+                                <style>
+                                    .toggle.ios, .toggle-on.ios, .toggle-off.ios { border-radius: 20rem; }
+                                    .toggle.ios .toggle-handle { border-radius: 20rem; }
+                                </style>
+                                <input id="toggle-event" type="checkbox" checked data-toggle="toggle" data-style="ios" data-on=" " data-off=" ">
+                            </label>
+                        </th>
+                        <th scope="col" class="col-table-1">
+                            <div class="wrap-img">
+                                <img src="<%=data[unitFrom].QuocKi %>">
+                            </div>
+                            <div class="title-currency text-center"><a href="/Currency/Convert?from=<%=data[unitFrom].KiHieu %>"><%=data[unitFrom].KiHieu%></a></div>
+                        </th>
+                        <th scope="col" class="col-table-1">
+                            <div class="wrap-img">
+                                <img src="<%=data[unitTo].QuocKi %>">
+                            </div>
+                            <div class="title-currency text-center"><a href="/Currency/Convert?from=<%=data[unitTo].KiHieu %>"><%=data[unitTo].KiHieu %></a></div>
+                        </th>
+                        <th scope="col" class="col-table-1">
+                            <div class="wrap-img">
+                                <img src="<%=data[37].QuocKi %>">
+                            </div>
+                            <div class="title-currency text-center"><a href="/Currency/Convert?from=<%=data[37].KiHieu %>"><%=data[37].KiHieu %></a></div>
+                        </th>
+                        <th scope="col" class="col-table-1">
+                            <div class="wrap-img">
+                                <img src="<%=data[15].QuocKi %>">
+                            </div>
+                            <div class="title-currency text-center"><a href="/Currency/Convert?from=<%=data[15].KiHieu%>"><%=data[15].KiHieu %></a></div>
+                        </th>
+                        <th scope="col" class="col-table-1">
+                            <div class="wrap-img">
+                                <img src="<%=data[31].QuocKi %>">
+                            </div>
+                            <div class="title-currency text-center"><a href="/Currency/Convert?from=<%=data[31].KiHieu%>"><%=data[31].KiHieu %></a></div>
+                        </th>
+                        <th scope="col" class="col-table-1">
+                            <div class="wrap-img">
+                                <img src="<%=data[27].QuocKi %>">
+                            </div>
+                            <div class="title-currency text-center"><a href="/Currency/Convert?from=<%=data[27].KiHieu %>"><%=data[27].KiHieu %></a></div>
+                        </th>
+                    </tr>
+                    <tr class="unit-table">
+                        <th scope="col" class="col-table-title">
+                            <img src="../images/line/middle-line.78c3ca4692f73d84aa1cc55a36fc7aef.png">
+                            <div class="wrap-img-row">
+                                <img src="<%=data[unitFrom].QuocKi %>">
+                            </div>
+                            <div class="title-currency text-center title-currency-row"><a href="/Currency/Convert?from=<%=data[unitFrom].KiHieu%>" >1 <%=data[unitFrom].KiHieu%></a></div>
+                        </th>
+                        <th scope="col" class="col-table-1 font-size-number text-center padding-top">
+                            <span><%=(data[unitFrom].TiLe/data[unitFrom].TiLe).toPrecision(5)%></span>
+                        </th>
+                        <th scope="col" class="col-table-1 font-size-number text-center padding-top">
+                            <span><%=(data[unitFrom].TiLe/data[unitTo].TiLe).toPrecision(5)%></span>
+                        </th>
+                        <th scope="col" class="col-table-1 font-size-number text-center padding-top">
+                            <span><%=(data[unitFrom].TiLe/data[37].TiLe).toPrecision(5)%></span>
+                        </th>
+                        <th scope="col" class="col-table-1 font-size-number text-center padding-top">
+                            <span><%=(data[unitFrom].TiLe/data[15].TiLe).toPrecision(5)%></span>
+                        </th>
+                        <th scope="col" class="col-table-1 font-size-number text-center padding-top">
+                            <span><%=(data[unitFrom].TiLe/data[31].TiLe).toPrecision(5)%></span>
+                        </th>
+                        <th scope="col" class="col-table-1 font-size-number text-center padding-top">
+                            <span><%=(data[unitFrom].TiLe/data[27].TiLe).toPrecision(5)%></span>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="col" class="col-table-title">
+                            <img src="../images/line/first-line.a04110167e93cd1ba56f7b6c590d23e0.png">
+                        </th>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="footer-compare-currency">
+
+            </div>
+        </div>
+    </div>
+</section>
