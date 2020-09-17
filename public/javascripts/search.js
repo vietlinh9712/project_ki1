@@ -37,7 +37,7 @@ function processDataReceiveFromServer (result) {
     }
     result.forEach(function (e) {
         dropdownWhenSearch.append("<li class=\"dropdown-items \" >" +
-                                    "<a class=\"dropdown-item \" href='length-convert'>"
+                                    "<a class=\"dropdown-item \" href='/"+e.type +"/Convert/?from="+e.symbol +"'>"
                                         +"<span class='text-left set-name'>"+e.name+" ("+e.symbol+")"+"</span>"
                                         +"<span class='text-right set-type '>"+e.type+ "</span>" +
             "                        </a>" +
@@ -50,9 +50,6 @@ inputSearch.bind('input',sendAndGetDataAndDelayInput);
 function processWhenUserOutSearch() {// hidden dropdown when user click out input field
     inputSearch.bind('focusin', () => {
         dropdownWhenSearch.show();
-    })
-    inputSearch.bind('focusout', () => {
-            dropdownWhenSearch.hide()
     })
 }
 selectDropdownWhenUserPressArrowDownAndUp();
