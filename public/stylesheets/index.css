@@ -12,10 +12,15 @@
 }
 
 nav .rankings{
-    height: 500px;
+    height: 100%;
     border: 3px solid #9fdae5;
     width: 100%;
     background-color: rgba(250, 244, 244, 0.62);
+}
+@media (min-width: 1200px){
+    nav .rankings{
+        height: 500px;
+    }
 }
 
 nav .rankings ul{
