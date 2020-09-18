@@ -1,3 +1,56 @@
-body{
-    background-color: red;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img{
+    max-width: 100%;
+}
+h1{
+    font-size: 60px !important;
+    text-transform: uppercase;
+    color: #449BB6;
+    text-align: center;
+    margin-bottom: 17px;
+    font-family: 'Fredoka One', cursive;
+}
+.aboutus{
+    font-family: 'Darker Grotesque', sans-serif;
+
+}
+.aboutus h2{
+    font-size: 50px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    color: #D4522D;
+}
+.aboutus p{
+    color: #449BB6;
+    font-size: 39px;
+}
+.aboutus a{
+    color: #D4522D;
+}
+.aboutus a:hover{
+    text-decoration: none;
+    color: red;
+}
+.introduction{
+    font-family: 'Darker Grotesque', sans-serif;
+}
+.ourmission h3{
+    font-weight: 400;
+    color: #449BB6;
+    font-size: 50px;
+    text-transform: uppercase;
+    margin-bottom: 27px;
+    line-height: 1.55;
+}
+.ourmission p{
+    color: #00B7C4;
+    font-size: 23px;
+    line-height: 1.48;
+    margin-bottom: 38px;
+    font-weight: 500;
 }
