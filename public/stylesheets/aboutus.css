@@ -42,7 +42,7 @@ h1{
 .ourmission h3{
     font-weight: 400;
     color: #449BB6;
-    font-size: 50px;
+    font-size: 35px;
     text-transform: uppercase;
     margin-bottom: 27px;
     line-height: 1.55;
@@ -53,4 +53,22 @@ h1{
     line-height: 1.48;
     margin-bottom: 38px;
     font-weight: 500;
+}
+.reason h3{
+    font-weight: 400;
+    color: #449BB6;
+    font-size: 35px;
+    text-transform: uppercase;
+    margin-bottom: 27px;
+    line-height: 1.55;
+}
+.reason p{
+    color: #00B7C4;
+    font-size: 23px;
+    line-height: 1.48;
+    margin-bottom: 38px;
+    font-weight: 500;
+}
+.text{
+    margin-top: 5%;
 }
