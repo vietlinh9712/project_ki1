@@ -1,6 +1,17 @@
-const models = require('../models/search.models')
+const models = require('../models/search.models');
+const modelsIndex = require('../models/index.models');
 
-module.exports.getSearch = function (req,res) {
+module.exports.getSearch =async function (req,res) {
+    let keyword = req.query.keyword;
+    let resultOfSearchUnit = await models.searchHasUnit(keyword);
+    if (resultOfSearchUnit.length){
+        console.log(resultOfSearchUnit);
+        let type = resultOfSearchUnit[0].TenDanhMuc;
+        let symbol = resultOfSearchUnit[0].KiHieu
+        res.redirect('/'+type+'/Convert?from='+symbol);
+    }else {
+        res.render('search/search_index');
+    }
 }
 
 module.exports.postSearch =async function (req,res) {
@@ -37,4 +48,31 @@ module.exports.searchCurrency = async function (req,res) {
     let key = req.body.key;
     let result = await models.searchCurrency(key);
     res.send(result);
+}
+
+module.exports.searchInput =async function(req,res){
+    let key = req.body.key;
+    let type = req.body.type;
+    let result = await models.searchUnitByTypeAndKey(type,key);
+    res.send(result);
+}
+
+module.exports.searchHasUnit = async function (req,res) {
+    let unitFrom = req.query.from;
+    let type = req.params.unit;
+    if (type.toLowerCase() === 'currency'){
+        res.redirect('/Currency/Convert?from='+unitFrom)
+    }else {
+        let allUnitSameType = await modelsIndex.getMeasureByType(type);
+        let indexUnitFrom = (allUnitSameType.findIndex(function (e) {
+            return e.KiHieu === unitFrom;
+        }) !== -1) ? (allUnitSameType.findIndex(function (e) {
+            return e.KiHieu === unitFrom;
+        })) : 1;
+        res.render('conversion2Unit',{
+            data: allUnitSameType,
+            unitFrom: indexUnitFrom,
+            unitTo: 0
+        })
+    }
 }

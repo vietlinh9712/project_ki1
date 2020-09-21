@@ -64,3 +64,9 @@ module.exports.getCurrencyAPI = async function (req,res) {
 module.exports.getAboutUs = function (req,res) {
     res.render('aboutus')
 }
+
+module.exports.getUnitByType =async function (req,res) {
+    let type = req.query.type;
+    let allUnitSameType = await models.getMeasureByType(type);
+    res.send(allUnitSameType);
+}

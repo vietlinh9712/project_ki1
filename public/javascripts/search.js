@@ -37,7 +37,7 @@ function processDataReceiveFromServer (result) {
     }
     result.forEach(function (e) {
         dropdownWhenSearch.append("<li class=\"dropdown-items \" >" +
-                                    "<a class=\"dropdown-item \" href='/"+e.type +"/Convert?from="+e.symbol +"'>"
+                                    "<a class=\"dropdown-item \" href='/search/"+e.type +"/Convert?from="+e.symbol +"'>"
                                         +"<span class='text-left set-name'>"+e.name+" ("+e.symbol+")"+"</span>"
                                         +"<span class='text-right set-type '>"+e.type+ "</span>" +
             "                        </a>" +
