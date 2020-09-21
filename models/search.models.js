@@ -23,7 +23,7 @@ module.exports.search = async function (keyword) {
 module.exports.searchCurrency = async function (key) {
     const pool = await sql.connect(config);
     let result = await pool.request()
-        .input('key',sql.NvarChar,'%'+ key +'%')
+        .input('key',sql.NVarChar,'%'+ key +'%')
         .execute('searchCurrency')
     if (result.recordset.length) return result.recordset
     else return [];

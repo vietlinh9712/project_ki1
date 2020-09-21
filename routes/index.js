@@ -18,5 +18,7 @@ router.get('/api/getCurrency',controller.getCurrencyAPI);
 
 router.get('/page/aboutus',controller.getAboutUs)
 
+router.get('api/getData')
+
 module.exports = router;
 

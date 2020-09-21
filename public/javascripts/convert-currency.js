@@ -40,19 +40,29 @@ function searchUnitCurrency(dropdownElement,searchInput) {
                 method: 'post',
                 success:  function (rel) {
                     $($(dropdownElement).children()[0]).empty();
-                    rel.map(function (e) {
+                    if (rel.length){
+                        rel.map(function (e) {
+                            $($(dropdownElement).children()[0]).append('<li class="dropdown-item">\n' +
+                                '                                            <a href="javascript:void(0)" class="dropdown-item-1">\n' +
+                                '                                                <div class="name-option-1" style="top:5%; left: 6%">\n' +
+                                '                                                    <div class="wrap-img">\n' +
+                                '                                                        <img src="' + e.QuocKi + '" style="border-radius: 100%;width: 40px;height: 40px;float: left;">\n' +
+                                '                                                    </div>\n' +
+                                '                                                    <div class="text-name-option current-code" ><span style="font-size: 1.5em;font-weight: 600;line-height: 20%">'+e.KiHieu+'</span></div>\n' +
+                                '                                                    <div class="text-name-option current-name"><span>'+e.TenDonVi+'</span></div>\n' +
+                                '                                                </div>\n' +
+                                '                                            </a>\n' +
+                                '                                        </li>')
+                        })
+                    }else {
                         $($(dropdownElement).children()[0]).append('<li class="dropdown-item">\n' +
-                            '                                            <a href="javascript:void(0)" class="dropdown-item-1">\n' +
+                            '                                            <div class="dropdown-item-1">\n' +
                             '                                                <div class="name-option-1" style="top:5%; left: 6%">\n' +
-                            '                                                    <div class="wrap-img">\n' +
-                            '                                                        <img src="' + e.QuocKi + '" style="border-radius: 100%;width: 40px;height: 40px;float: left;">\n' +
-                            '                                                    </div>\n' +
-                            '                                                    <div class="text-name-option current-code" ><span style="font-size: 1.5em;font-weight: 600;line-height: 20%">'+e.KiHieu+'</span></div>\n' +
-                            '                                                    <div class="text-name-option current-name"><span>'+e.TenDonVi+'</span></div>\n' +
+                            '                                                    <span>no result</span> \n'+
                             '                                                </div>\n' +
-                            '                                            </a>\n' +
+                            '                                            </div>\n' +
                             '                                        </li>')
-                    })
+                    }
                 }
             })
         },200)
@@ -71,12 +81,15 @@ function displaySelectUnitToInput(Dropdown,currentUnitSelect,dropdownElement,sea
         $(searchInput).val(symbolUnit);
         $(Dropdown).css('display','none');
         $(currentUnitSelect).removeClass('display-none');
+        if ($(searchInput).attr('id') === 'from') changeUnitFrom(symbolUnit);
+        if ($(searchInput).attr('id') === 'to') changeUnitTo(symbolUnit);
+        changeRateUnit($('#from').val(),$('#to').val());
         $.ajax({// reset dropdown unit before search
-            url: 'search/Currency/',
+            url: '/search/Currency',
+            method: 'post',
             data: {
                 key: ''
             },
-            method: 'post',
             success:  function (rel) {
                 $($(dropdownElement).children()[0]).empty();
                 rel.map(function (e) {
@@ -115,6 +128,9 @@ function clickInverseButton() {
         let valueInput2 = $(input2).val();
         $(input1).val(valueInput2);
         $(input2).val(valueInput1);
+        changeUnitFrom(valueInput2);
+        changeUnitTo(valueInput1);
+        changeRateUnit(valueInput2,valueInput1);
         $($($(selectInput2).children()[0]).children()[0]).attr('src',linkImgInput1);
         $($($(selectInput2).children()[1]).children()[0]).text(symbolInput1);
         $($($(selectInput2).children()[2]).children()[0]).text(nameUnitInput1);
@@ -125,3 +141,57 @@ function clickInverseButton() {
 }
 clickInverseButton();
 
+function changeUnitFrom (value) {
+    let unitFrom = $('.unit-from');
+    for(let unit of unitFrom){
+        $(unit).text(value);
+    }
+}
+
+function changeUnitTo (value) {
+    let unitTo = $('.unit-to')
+    for(let unit of unitTo){
+        $(unit).text(value);
+    }
+}
+
+function changeRateUnit(valueFrom,valueTo) {
+    // let valueFrom = $('#from').val();
+    // let valueTo = $('#to').val();
+    let amount = $('#amount').val();
+    for(let unit of dataCurrency){
+        if (unit.KiHieu === valueFrom) valueFrom = unit;
+        if (unit.KiHieu === valueTo) valueTo = unit;
+    }
+    if (isNaN(Number(amount)) || amount === ''){
+        $('#user-input').text(1)
+        $('#result-convert').text(((valueFrom.TiLe/valueTo.TiLe).toPrecision(12)))
+    }else{
+        let compareTable1= $('#compare-table-1');
+        let compareTable2= $('#compare-table-2');
+        $('#user-input').text(amount);
+        $('#result-convert').text((Number(amount)*(Number(valueTo.TiLe)/Number(valueFrom.TiLe))).toPrecision(12));
+        $('#rate-one-from').text((valueFrom.TiLe/valueTo.TiLe));
+        $('#rate-one-to').text((valueTo.TiLe/valueFrom.TiLe));
+        $(compareTable1).empty();
+        $(compareTable2).empty();
+        for(let i = 0; i <= 10 ; i++){
+            let number;
+            if (i === 0)  number = 1;
+            if (i === 1)  number = 5;
+            if (i === 2)  number = 10;
+            if (i === 3)  number = 25;
+            if (i === 4)  number = 50;
+            if (i === 5)  number = 100;
+            if (i === 6)  number = 500;
+            if (i === 7)  number = 1000;
+            if (i === 8)  number = 5000;
+            if (i === 9)  number = 10000;
+            if (i === 10)  number = 50000;
+            $(compareTable2).append('<tr><th class="text-left col-left set-text ">'+ number + '<span class="unit-to"> '+valueTo.KiHieu+'</span></th>\n' +
+                '                    <th class="text-left col-right set-text"> ' + ((valueFrom.TiLe / valueTo.TiLe)*number).toPrecision(12) +' <span class="unit-from">'+valueFrom.KiHieu+'</span></th></tr>')
+            $(compareTable1).append('<tr><th class="text-left col-left set-text ">'+ number + '<span class="unit-to"> '+valueFrom.KiHieu+'</span></th>\n' +
+                '                    <th class="text-left col-right set-text"> ' + ((valueTo.TiLe / valueFrom.TiLe)*number).toPrecision(12) +' <span class="unit-from">' +valueTo.KiHieu+'</span></th></tr>')
+        }
+    }
+}

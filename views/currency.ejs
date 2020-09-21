@@ -19,7 +19,7 @@
         <div class="wrap">
             <div class="row">
                 <div class="col-lg-12 col-md-12 ">
-                    <form id="from-convert" method="get" action="/Currency/Convert" class="form-group wrap-form">
+                    <form autocomplete="off" id="from-convert" method="get" action="/Currency/Convert" class="form-group wrap-form">
                         <div class="row">
                             <div class='col-lg-3 col-md-12 wrap-input'>
                                 <label class="lable">
@@ -117,16 +117,16 @@
                 </div>
                 <div class="display-amount-input text-center col-lg-12 col-md-12">
                     <div class="display-amount-text">
-                        <span class="number-input"><span id="user-input"><%=amount%></span> <span class="amount-unit"><%=data[unitFrom].KiHieu%>  = </span></span>
+                        <span class="number-input"><span id="user-input"><%=amount%></span> <span class="amount-unit unit-from"><%=data[unitFrom].KiHieu%></span> = </span>
                     </div>
                     <div class="display-amount-text">
-                        <span class="number-result"><%=(amount*(data[unitFrom].TiLe / data[unitTo].TiLe)).toPrecision(12)%> <span class="amount-unit"> <%=data[unitTo].KiHieu%></span></span>
+                        <span class="number-result"><span id="result-convert"> <%=(amount*(data[unitFrom].TiLe / data[unitTo].TiLe)).toPrecision(12)%></span> <span class="amount-unit unit-to"> <%=data[unitTo].KiHieu%></span></span>
                     </div>
                 </div>
                 <div class="one-unit-conversion">
-                    <div class="text-center">1 <span><%=data[unitFrom].KiHieu%></span> = <%=data[unitFrom].TiLe / data[unitTo].TiLe%> <%=data[unitTo].KiHieu%></div>
-                    <div class="text-center">1 <span><%=data[unitTo].KiHieu%></span> = <%=data[unitTo].TiLe / data[unitFrom].TiLe%> <%=data[unitFrom].KiHieu%></div>
-                    <div class="text-unit text-unit-left">FROM <span><%=data[unitFrom].KiHieu%></span> TO <span><%=data[unitTo].KiHieu%></span></div>
+                    <div class="text-center">1 <span  class="unit-from"><%=data[unitFrom].KiHieu%></span> = <span id="rate-one-from"><%=data[unitFrom].TiLe / data[unitTo].TiLe%></span> <span class="unit-to"><%=data[unitTo].KiHieu%></span> </div>
+                    <div class="text-center">1 <span class="unit-to"><%=data[unitTo].KiHieu%></span> = <span id="rate-one-to"><%=data[unitTo].TiLe / data[unitFrom].TiLe%></span> <span class="unit-from"><%=data[unitFrom].KiHieu%></span></div>
+                    <div class="text-unit text-unit-left">FROM <span class="unit-from"><%=data[unitFrom].KiHieu%></span> TO <span class="unit-to"><%=data[unitTo].KiHieu%></span></div>
                     <div class="text-unit text-unit-right">Last Update: 2020-09-14 02:05 GMT+7</div>
                 </div>
             </div>
@@ -140,14 +140,14 @@
             <div class="row">
                 <div class="col-lg-5 col-md-12 table-cal">
                     <div class="title-table text-center">
-                        <h3>Convert <%=data[unitFrom].KiHieu%> to <%=data[unitTo].KiHieu%></h3>
+                        <h3>Convert <span class="unit-from"><%=data[unitFrom].KiHieu%></span> to <span class="unit-to"><%=data[unitTo].KiHieu%></span></h3>
                     </div>
                     <table class="table">
                         <thead>
-                        <th class="text-left col-left"><%=data[unitFrom].KiHieu%></th>
-                        <th class="text-left col-right"><%=data[unitTo].KiHieu%></th>
+                        <th class="text-left col-left unit-from"><%=data[unitFrom].KiHieu%></th>
+                        <th class="text-left col-right unit-to"><%=data[unitTo].KiHieu%></th>
                         </thead>
-                        <tbody>
+                        <tbody  id="compare-table-1">
                         <%for(let i = 0; i <= 10 ; i++){let number = 1%>
                         <%if (i === 0)  number = 1;
                             if (i === 1)  number = 5;
@@ -161,9 +161,9 @@
                             if (i === 9)  number = 10000;
                             if (i === 10)  number = 50000;
                         %>
-                        <tr>
-                            <th class="text-left col-left set-text"><%=number%> <%=data[unitFrom].KiHieu%></th>
-                            <th class="text-left col-right set-text"><%=((data[unitFrom].TiLe / data[unitTo].TiLe)*number).toPrecision(12)%> <%=data[unitTo].KiHieu%> </th>
+                        <tr >
+                            <th class="text-left col-left set-text "><%=number%> <span class="unit-from"><%=data[unitFrom].KiHieu%></span></th>
+                            <th class="text-left col-right set-text"><%=((data[unitFrom].TiLe / data[unitTo].TiLe)*number).toPrecision(12)%> <span class="unit-to"><%=data[unitTo].KiHieu%></span> </th>
                         </tr>
                         <%}%>
                         </tbody>
@@ -171,14 +171,14 @@
                 </div>
                 <div class="col-lg-5 col-md-12 table-cal">
                     <div class="title-table text-center">
-                        <h3>Convert <%=data[unitTo].KiHieu%> to <%=data[unitFrom].KiHieu%></h3>
+                        <h3>Convert <span class="unit-to"><%=data[unitTo].KiHieu%></span> to <span class="unit-from"><%=data[unitFrom].KiHieu%></span></h3>
                     </div>
                     <table class="table">
                         <thead>
-                        <th class="text-left col-left"><%=data[unitTo].KiHieu%></th>
-                        <th class="text-left col-right"><%=data[unitFrom].KiHieu%></th>
+                        <th class="text-left col-left unit-to"><%=data[unitTo].KiHieu%></th>
+                        <th class="text-left col-right unit-from"><%=data[unitFrom].KiHieu%></th>
                         </thead>
-                        <tbody>
+                        <tbody id="compare-table-2">
                         <%for(let i = 0; i <= 10 ; i++){let number = 1%>
                         <%if (i === 0)  number = 1;
                             if (i === 1)  number = 5;
@@ -193,8 +193,8 @@
                             if (i === 10)  number = 50000;
                         %>
                         <tr>
-                            <th class="text-left col-left set-text"><%=number%> <%=data[unitTo].KiHieu%></th>
-                            <th class="text-left col-right set-text"><%=((data[unitTo].TiLe / data[unitFrom].TiLe)*number).toPrecision(12)%> <%=data[unitFrom].KiHieu%></th>
+                            <th class="text-left col-left set-text "><%=number%> <span class="unit-to"><%=data[unitTo].KiHieu%></span></th>
+                            <th class="text-left col-right set-text"><%=((data[unitTo].TiLe / data[unitFrom].TiLe)*number).toPrecision(12)%> <span class="unit-from"><%=data[unitFrom].KiHieu%></span></th>
                         </tr>
                         <%}%>
                         </tbody>
@@ -207,5 +207,6 @@
 <%-include('layout/footer')%>
 <script type="text/javascript" src="../javascripts/ExchangeRate.js"></script>
 <script type="text/javascript" src="../javascripts/convert-currency.js"></script>
+
 </body>
 </html>

@@ -39,7 +39,7 @@
 
 .currency-comparison-table .title-currency{
     color: rgb(0, 92, 239);
-    font-size: 2vw;
+    font-size: 1.8vw;
 }
 
 .col-table-title > img{
@@ -54,7 +54,7 @@
 
 .currency-comparison-table .title-currency-row{
     float: left;
-    width: 80%;
+    width: 60%;
 }
 
 .title-currency-compare{
@@ -64,8 +64,13 @@
 
 .label-btn{
     position: absolute;
-    top: 30%;
-    left: 10%;
+    top: 20%;
+    right: 10%;
+}
+
+.text-reverst{
+    position: absolute;
+    top:144%;
 }
 
 .font-size-number{
@@ -77,4 +82,101 @@
     width: 100%;
     height: 100px;
     background-color: white;
+}
+
+.set-btn-add-remove{
+    width: 80%;
+    position: absolute;
+    top: -15%;
+    left: 2vw;
+}
+
+.set-btn-add-remove .btn-add{
+    color: #007bff;
+    width: 20%;
+    height: auto;
+    float: left;
+    padding-top: 6px;
+}
+
+.set-btn-add-remove .text-btn{
+    width: 80%;
+    float: left;
+    font-size: 1.25vw;
+    padding-left: 10px;
+}
+
+.wrap-btn-add-remove > a{
+    color: #0b2e13;
+}
+
+.wrap-btn-add-remove > a:hover{
+    color: #0b2e13;
+    text-decoration: none;
+}
+
+.wrap-btn-add-remove .set-from-input{
+    width: 80%;
+    border-radius: 20px !important;
+    border: 2px solid #fd7e14;
+    margin: 0 auto;
+    background-color: #f8f8f8;
+}
+
+.wrap-btn-add-remove .dropdown-menu{
+    position: absolute;
+    left: 22px;
+    top: 20px;
+    width: 120%;
+}
+
+.wrap-btn-add-remove .dropdown-item-1{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrap-btn-add-remove .name-option-1{
+    width: 100%;
+    height: auto;
+    padding: 5px 0 10px 10px;
+    color: rgb(9, 9, 9);
+}
+
+.wrap-btn-add-remove .current-code{
+    width: 15%;
+    font-size: 1.2vw;
+    float: left;
+
+}
+
+.wrap-btn-add-remove .current-name{
+    width: 60%;
+    font-size: 1.2vw;
+    float: left;
+}
+.wrap-btn-add-remove .dropdown-item >a:hover{
+    text-decoration: none;
+}
+
+.wrap-btn-add-remove .text-name-option{
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.wrap-btn-add-remove .icon-remove{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 2px;
+    right: -15px;
+}
+
+.display-block{
+    display: block !important;
 }

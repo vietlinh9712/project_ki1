@@ -19,9 +19,9 @@
             <div class="col-md-12" >
                 <div class="input-unit input-unit-1 col-md-12">
                     <div class="label">
-                        <a href="#" style="text-transform: uppercase;font-weight: 700;">COMMON <%=data[0].TenDanhMuc%> Units</a>
+                        <a href="#" style="text-transform: uppercase;font-weight: 700;">Common <%=data[0].TenDanhMuc%> Units</a>
                     </div>
-                    <form class="form-group">
+                    <form autocomplete="off" class="form-group">
                         <%for(let unit of data){%>
                         <%if (unit.DoPhoBien == 1){%>
                         <div class="col-lg-4 col-md-12 input-field">
@@ -74,7 +74,7 @@
             <%=dataunit[i].TenDonVi%>
         </div>
         <div class="decription">
-            <%=dataunit[i].MoTa%>
+            <%=dataunit[i].MoTa%><a href="#"> Show more...</a>
         </div>
     </div>
     <%}%>
