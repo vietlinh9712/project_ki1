@@ -8,9 +8,18 @@ module.exports.getSearch =async function (req,res) {
         console.log(resultOfSearchUnit);
         let type = resultOfSearchUnit[0].TenDanhMuc;
         let symbol = resultOfSearchUnit[0].KiHieu
-        res.redirect('/'+type+'/Convert?from='+symbol);
+        res.redirect('/search/'+type+'/Convert?from='+symbol);
     }else {
-        res.render('search/search_index');
+        let resultOfSearch = await models.searchUnitByKey(keyword);
+        let amoutType = await resultOfSearch.map((e) => {
+            return e.TenDanhMuc;
+        });
+        let typeUnique = [...new Set(amoutType)];
+        res.render('search/search_index',{
+            data: resultOfSearch,
+            keyword: keyword,
+            typeUnit : typeUnique
+        });
     }
 }
 

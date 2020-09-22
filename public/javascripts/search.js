@@ -38,7 +38,7 @@ function processDataReceiveFromServer (result) {
     result.forEach(function (e) {
         dropdownWhenSearch.append("<li class=\"dropdown-items \" >" +
                                     "<a class=\"dropdown-item \" href='/search/"+e.type +"/Convert?from="+e.symbol +"'>"
-                                        +"<span class='text-left set-name'>"+e.name+" ("+e.symbol+")"+"</span>"
+                                        +"<span class='text-left set-name'><span class='title-name'>"+e.name+"</span>("+e.symbol+")"+"</span>"
                                         +"<span class='text-right set-type '>"+e.type+ "</span>" +
             "                        </a>" +
             "                       </li>")
@@ -65,11 +65,11 @@ function selectDropdownWhenUserPressArrowDownAndUp(){
             let dropdownList = $('#list_search').children();
             if (e.which === 40) (selectDropdown < $(dropdownList).length - 1)? selectDropdown++ : selectDropdown;
             if (e.which === 38) (selectDropdown > 0) ? selectDropdown-- : selectDropdown = 0;
-            let dropdownUserSelect =await $('#list_search').children()[selectDropdown];
+            let dropdownUserSelect = $('#list_search').children()[selectDropdown];
             for(let dropdown of dropdownList){
                 if (dropdown === dropdownUserSelect){
                     $(dropdownUserSelect).css('background-color','#aeaaaa63');
-                    $(inputSearch).val($(dropdownUserSelect).text());
+                    $(inputSearch).val($($('.title-name')[selectDropdown]).text());
                 }else {
                     $(dropdown).css('background','white');
                 }

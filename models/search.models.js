@@ -46,3 +46,11 @@ module.exports.searchUnitByTypeAndKey =async function (type,key) {
         .execute('T2004E_NhomViet_searchUnitSameType')
     return result.recordset
 }
+
+module.exports.searchUnitByKey = async function (keyword) {
+    const pool = await sql.connect(config);
+    let result = await pool.request()
+        .input('keyword',sql.NVarChar,'%'+keyword+'%')
+        .execute('T2004E_NhomViet_searchUnitSameKeyword')
+    return result.recordset
+}

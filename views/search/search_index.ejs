@@ -11,70 +11,24 @@
 <div class="container padding">
     <div class="searched text-center">
         <div class="col-12">
-            <h1 class="display-4">Search Results</h1>
+            <h1 class="display-4">Search Results For '<%=keyword%>'</h1>
         </div>
         <hr class="row"/>
     </div>
     <div class="row">
+        <%for(let type of typeUnit){%>
+    <div class="col-lg-12 text-left" style="font-size: 2.3em;"> <%=type%> UNIT</div>
+        <%for(let dataUnit of data){%>
+        <%if (dataUnit.TenDanhMuc === type){%>
         <div class="col-md-12">
-            <div class="card">
-                <div class="card-img">
-                    <a href="#"><img src="https://www.asknumbers.com/images/temperature.jpg" width="100%"/></a>
-                </div>
+            <div class="">
                 <div class="card-body">
-                    <a href="#"><h4 class="card-title">Ten bai viet 1</h4></a>
-                    <p>mô tả thêm</p>
+                    <a href="/search/<%=dataUnit.TenDanhMuc + '/Convert?from='+ dataUnit.KiHieu%>"><h4 class="card-title"><%=dataUnit.TenDonVi%></h4></a>
+                    <p><%=dataUnit.MoTa%></p>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="card ">
-                <div class="card-img">
-                    <a href="#"><img src="https://www.asknumbers.com/images/temperature.jpg" width="100%"/></a>
-                </div>
-                <div class="card-body">
-                    <a href="#"><h4 class="card-title">Ten bai viet 2</h4></a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-img">
-                    <a href="#"><img src="https://www.asknumbers.com/images/temperature.jpg" width="100%"/></a>
-                </div>
-                <div class="card-body">
-                    <a href="#"><h4 class="card-title">Ten bai viet 3</h4></a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-img">
-                    <a href="#"><img src="https://www.asknumbers.com/images/temperature.jpg" width="100%"/></a>
-                </div>
-                <div class="card-body">
-                    <a href="#"><h4 class="card-title">Ten bai viet 4</h4></a>
-                    <p>mô tả thêm</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-img">
-                    <a href="#"><img src="https://www.asknumbers.com/images/temperature.jpg" width="100%"/></a>
-                </div>
-                <div class="card-body">
-                    <a href="#"><h4 class="card-title">Ten bai viet 5</h4></a>
-                    <p>mô tả thêm</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="searched text-center">
-        <div class="col-12">
-            <h1 class="display-4">Related Articles</h1>
-        </div>
-        <hr class="row"/>
+        <%}}}%>
     </div>
 </div>
 </body>
