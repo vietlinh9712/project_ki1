@@ -999,7 +999,7 @@ legend {
 }
 
 .dropdown-menu{
-  max-height: 320px !important;
+  max-height: 500px !important;
   width: 100%;
   display: none;
 }

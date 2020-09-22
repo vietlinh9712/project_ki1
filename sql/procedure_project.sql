@@ -29,20 +29,7 @@ DROP PROCEDURE T2004E_NhomViet_getTopCurrency
 	WHERE T2004E_NhomViet_DanhMuc.TenDanhMuc = 'Length'
 
 
-CREATE PROCEDURE T2004E_NhomViet_getTopUnit_1 @key Nvarchar(255)
-AS
-	IF EXISTS(SELECT * FROM T2004E_NhomViet_DanhMuc WHERE TenDanhMuc LIKE @key)
-	BEGIN
-    SELECT TOP(5) T2004E_NhomViet_DanhMuc.TenDanhMuc,T2004E_NhomViet_DonVi.TenDonVi,T2004E_NhomViet_MoTa.MoTa
-    FROM T2004E_NhomViet_DanhMuc
-    INNER JOIN T2004E_NhomViet_DonVi
-    ON T2004E_NhomViet_DanhMuc.DanhMucID = T2004E_NhomViet_DonVi.DanhMucID
-	INNER JOIN T2004E_NhomViet_MoTa
-	ON T2004E_NhomViet_DonVi.DonViID = T2004E_NhomViet_MoTa.DonViID
-	WHERE T2004E_NhomViet_DanhMuc.TenDanhmuc LIKE @key
-	END
 
-EXEC T2004E_NhomViet_getTopUnit_1 @key = 'Area'
 
 
 
