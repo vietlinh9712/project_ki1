@@ -70,7 +70,8 @@
 
 .text-reverst{
     position: absolute;
-    top:144%;
+    top:0;
+    right: 80px;
 }
 
 .font-size-number{

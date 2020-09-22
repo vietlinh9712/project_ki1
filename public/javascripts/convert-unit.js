@@ -1,4 +1,4 @@
-let timer = 200;
+let timer = 100;
 let dataAllUnit;
 
 $.ajax({
@@ -33,7 +33,7 @@ function processClickSelectUnit() {
     $('.select-unit').bind('focusout',async function () {
         let wrapSelectUnit = $(this).parents()[0];
         let searchInput = $(this);
-        let currentUnitSelect =    $(wrapSelectUnit).children()[1];
+        let currentUnitSelect = $(wrapSelectUnit).children()[1];
         let wrapDropdown = $(wrapSelectUnit).children()[2];
         let Dropdown = $(wrapDropdown).children()[0];
         $(Dropdown).css('display','block');
@@ -80,7 +80,7 @@ function searchUnitCurrency(dropdownElement,searchInput) {
                     }
                 }
             })
-        },200)
+        },100)
     })
 }
 
